@@ -13,6 +13,8 @@ export const toInt = (x: string = "") =>
 	) || 0;
 
 export const useColorScheme = () =>
-	window?.matchMedia?.("(prefers-color-scheme:dark)")?.matches
-		? "dark"
-		: "light";
+	typeof window !== "undefined"
+		? window?.matchMedia?.("(prefers-color-scheme:dark)")?.matches
+			? "dark"
+			: "light"
+		: "dark";
