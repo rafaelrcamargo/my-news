@@ -80,28 +80,35 @@ export const Card: FC<CardProps> = ({
 			style={{ rotate, background }}
 			className={className}
 			dragElastic={ELASTIC}
+			dragTransition={{
+				min: 10,
+				max: 100,
+				bounceDamping: 10,
+				bounceStiffness: 10,
+				power: 10,
+			}}
 			dragSnapToOrigin={true}
 			dragConstraints={CONSTRAINTS}
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0, y: 100, ...leaveBy }}
 			onDragEnd={(_, { point }) => {
-				if (point.y < 0) {
+				console.log(point);
+
+				if (point.y < -20) {
 					console.log("Swiped up");
 					window.open(url, "_blank");
 				}
 
-				if (point.x < 50) {
-					setLeaveBy("left");
-
+				if (point.x < 400) {
 					console.log("Swiped left");
+					setLeaveBy("left");
 					actions("DISLIKE");
 				}
 
-				if (point.x > 400) {
-					setLeaveBy("right");
-
+				if (point.x > 600) {
 					console.log("Swiped right");
+					setLeaveBy("right");
 					actions("LIKE");
 				}
 			}}
@@ -138,9 +145,9 @@ type PlaceholderProps = Pick<CardProps, "title"> & { i: number };
 export const Placeholder: FC<PlaceholderProps> = ({ title, i }) => {
 	return (
 		<motion.div
-			className={`${CLASSNAME} min-w-[84vw] shadow-md border border-neutral-200 dark:border-neutral-900/30 dark:shadow-neutral-900/30 shadow-neutral-500/5 -z-10`}
+			className={`${CLASSNAME} min-w-[84vw] md:min-w-0 md:w-[32rem] shadow-md border border-neutral-200 dark:border-neutral-900/30 dark:shadow-neutral-900/30 shadow-neutral-500/5 z-1`}
 			style={{ rotate: toInt(title) }}
-			transition={{ delay: i * 0.25 }}
+			transition={{ delay: i * 0.15 }}
 			initial={{ opacity: 0, y: 100 }}
 			animate={{ opacity: 1, y: 0 }}
 		/>

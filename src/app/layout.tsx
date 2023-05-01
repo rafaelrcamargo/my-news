@@ -1,10 +1,17 @@
 import { FC, PropsWithChildren } from "react";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const inter = Open_Sans({
+	subsets: ["latin"],
+	weight: "variable",
+	display: "swap",
+	preload: true,
+	adjustFontFallback: true,
+	variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
 	title: "Create Next App",
