@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useReducer } from "react";
+import { FC, memo, useEffect, useMemo, useReducer } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { cn, toInt, useColorScheme } from "@/lib/utils";
 import { CardProps } from "@/types/card";
@@ -93,30 +93,23 @@ export const Card: FC<CardProps> = ({
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0, y: 100, ...leaveBy }}
 			onDragEnd={(_, { point }) => {
-				console.log(point);
-
-				if (point.y < -20) {
-					console.log("Swiped up");
-					window.open(url, "_blank");
-				}
+				if (point.y < -20) window.open(url, "_blank");
 
 				if (point.x < 400) {
-					console.log("Swiped left");
 					setLeaveBy("left");
 					actions("DISLIKE");
 				}
 
 				if (point.x > 600) {
-					console.log("Swiped right");
 					setLeaveBy("right");
 					actions("LIKE");
 				}
 			}}
 			onUpdate={(latest) => value.updateAndNotify(Number(latest.x ?? 0))}
 		>
-			<section className="prose prose-neutral dark:prose-invert prose-sm flex flex-col h-[-webkit-fill-available]">
+			<section className="prose prose-sm prose-neutral flex h-[-webkit-fill-available] flex-col dark:prose-invert">
 				<h1 className="text-base md:text-2xl">{title} </h1>
-				<div className="flex gap-2 text-xs md:text-sm text-neutral-400 -mt-2 md:-mt-4">
+				<div className="-mt-2 flex gap-2 text-xs text-neutral-400 md:-mt-4 md:text-sm">
 					{author && (
 						<>
 							<span>{author}</span>
@@ -126,30 +119,45 @@ export const Card: FC<CardProps> = ({
 					<span className="text-violet-500">{source.name}</span>
 				</div>
 				<p>{description}</p>
-				<motion.div className="relative w-full h-full">
-					<Image
-						src={urlToImage ?? ""}
-						alt="Picture related to the article"
-						priority={z === 10}
-						className="rounded-md border border-neutral-200 dark:border-neutral-900/30 shadow-md dark:shadow-neutral-950/30 m-0 pointer-events-none object-cover"
-						loading="eager"
-						fill
-					/>
-				</motion.div>
+				{urlToImage && (
+					<motion.div className="relative h-full w-full">
+						<Image
+							src={urlToImage}
+							alt="Picture related to the article"
+							priority={z === 10}
+							className="pointer-events-none m-0 rounded-md border border-neutral-200 object-cover shadow-md dark:border-neutral-900/30 dark:shadow-neutral-950/30"
+							loading="eager"
+							fill
+							sizes="(max-width: 1200px) 66vw, 33vw"
+						/>
+					</motion.div>
+				)}
 			</section>
 		</motion.div>
 	);
 };
 
-type PlaceholderProps = Pick<CardProps, "title"> & { i: number };
-export const Placeholder: FC<PlaceholderProps> = ({ title, i }) => {
+const change = (old: { title: string }, current: { title: string }) =>
+	old.title.length === current.title.length;
+
+type PlaceholderProps = Pick<CardProps, "title">;
+export const Placeholder = memo(function Placeholder({
+	title,
+}: PlaceholderProps) {
+	const int = useMemo(() => {
+		return toInt(title);
+	}, [title]);
+
 	return (
-		<motion.div
-			className={`${CLASSNAME} min-w-[84vw] md:min-w-0 md:w-[32rem] shadow-md border border-neutral-200 dark:border-neutral-900/30 dark:shadow-neutral-900/30 shadow-neutral-500/5 z-1`}
-			style={{ rotate: toInt(title) }}
-			transition={{ delay: i * 0.15 }}
-			initial={{ opacity: 0, y: 100 }}
-			animate={{ opacity: 1, y: 0 }}
-		/>
+		<>
+			{console.log("Placeholder was rendered")}
+			<motion.div
+				className={`${CLASSNAME} z-1 min-w-[84vw] border border-neutral-200 shadow-md shadow-neutral-500/5 dark:border-neutral-900/30 dark:shadow-neutral-900/30 md:w-[32rem] md:min-w-0`}
+				style={{ rotate: int }}
+				transition={{ delay: int * 0.15 }}
+				initial={{ opacity: 0, y: 100 }}
+				animate={{ opacity: 1, y: 0 }}
+			/>
+		</>
 	);
-};
+}, change);
