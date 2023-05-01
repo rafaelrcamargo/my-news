@@ -15,10 +15,10 @@ const CLASSNAME = cn(
 
 const CONSTRAINTS = { left: 0, right: 0, top: 0, bottom: 0 };
 const ELASTIC = {
-	left: 0.1,
-	right: 0.1,
+	left: 0.25,
+	right: 0.25,
 	top: 0.15,
-	bottom: 0.025,
+	bottom: 0.05,
 };
 
 export const Card: FC<CardProps> = ({
@@ -98,7 +98,7 @@ export const Card: FC<CardProps> = ({
 					actions("DISLIKE");
 				}
 
-				if (point.x > 650) {
+				if (point.x > 400) {
 					setLeaveBy("right");
 
 					console.log("Swiped right");
