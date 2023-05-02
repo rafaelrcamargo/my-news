@@ -120,15 +120,15 @@ export const Card: FC<CardProps> = ({
         </div>
         <p>{description}</p>
         {urlToImage && (
-          <motion.div className="relative h-full w-full">
+          <motion.div className="relative block h-full w-full">
             <Image
-              src={urlToImage}
-              alt="Picture related to the article"
-              priority={z === 10}
               className="pointer-events-none m-0 rounded-md border border-neutral-200 object-cover shadow-md dark:border-neutral-900/30 dark:shadow-neutral-950/30"
+              sizes="400px" // TODO: Test this
+              priority={z === 10}
+              src={urlToImage}
               loading="eager"
+              alt={title}
               fill
-              sizes="(max-width: 1200px) 66vw, 33vw"
             />
           </motion.div>
         )}
@@ -137,8 +137,10 @@ export const Card: FC<CardProps> = ({
   )
 }
 
-const change = (old: { title: string }, current: { title: string }) =>
-  old.title.length === current.title.length
+const change = (old: { title: string }, current?: { title: string }) =>
+  typeof window !== "undefined"
+    ? old?.title.length === current?.title.length
+    : false
 
 type PlaceholderProps = Pick<CardProps, "title">
 export const Placeholder = memo(function Placeholder({
@@ -149,16 +151,13 @@ export const Placeholder = memo(function Placeholder({
   }, [title])
 
   return (
-    <>
-      {console.log("Placeholder was rendered")}
-      <motion.div
-        className={`${CLASSNAME} z-1 min-w-[84vw] border border-neutral-200 shadow-md shadow-neutral-500/5 dark:border-neutral-900/30 dark:shadow-neutral-900/30 md:w-[32rem] md:min-w-0`}
-        style={{ rotate: int }}
-        transition={{ delay: int * 0.15 }}
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      />
-    </>
+    <motion.div
+      className={`${CLASSNAME} z-1 min-w-[84vw] border border-neutral-200 shadow-md shadow-neutral-500/5 dark:border-neutral-900/30 dark:shadow-neutral-900/30 md:w-[32rem] md:min-w-0`}
+      style={{ rotate: int }}
+      transition={{ delay: int * 0.15 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+    />
   )
 },
 change)

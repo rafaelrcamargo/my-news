@@ -18,7 +18,7 @@ const actions = (state: typeof NEWS.articles, action: "LIKE" | "DISLIKE") => {
   }
 }
 
-export const Deck = () => {
+const Deck = () => {
   const [articles, dispatch] = useReducer(actions, NEWS.articles)
 
   return (
@@ -33,10 +33,12 @@ export const Deck = () => {
               z={10 - i}
             />
           ) : (
-            <Placeholder key={article.title} i={i} {...article} />
+            <Placeholder key={article.title} {...article} />
           )
         )}
       </AnimatePresence>
     </motion.div>
   )
 }
+
+export default Deck
