@@ -108,7 +108,7 @@ export const Card: FC<CardProps> = ({
       onUpdate={latest => value.updateAndNotify(Number(latest.x ?? 0))}
     >
       <section className="prose prose-sm prose-neutral flex h-[-webkit-fill-available] flex-col dark:prose-invert">
-        <h1 className="text-base md:text-2xl">{title} </h1>
+        <h1 className="text-base md:text-2xl">{title}</h1>
         <div className="-mt-2 flex gap-2 text-xs text-neutral-400 md:-mt-4 md:text-sm">
           {author && (
             <>
