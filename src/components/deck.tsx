@@ -1,9 +1,9 @@
 "use client"
 
 import { useReducer } from "react"
-import { AnimatePresence, motion } from "framer-motion"
 import { Card, Placeholder } from "@/components/card"
 import NEWS from "@/data/news"
+import { AnimatePresence, motion } from "framer-motion"
 
 const actions = (state: typeof NEWS.articles, action: "LIKE" | "DISLIKE") => {
   switch (action) {
@@ -22,7 +22,7 @@ const Deck = () => {
   const [articles, dispatch] = useReducer(actions, NEWS.articles)
 
   return (
-    <motion.div className="center relative h-screen w-full overflow-hidden">
+    <motion.div className="center relative h-screen w-full">
       <AnimatePresence>
         {articles.map((article, i) =>
           i < 2 ? (

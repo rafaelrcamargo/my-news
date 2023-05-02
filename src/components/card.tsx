@@ -1,16 +1,16 @@
 "use client"
 
-import { FC, memo, useEffect, useMemo, useReducer } from "react"
-import { motion, useMotionValue, useTransform } from "framer-motion"
-import { cn, toInt, useColorScheme } from "@/lib/utils"
-import { CardProps } from "@/types/card"
+import { memo, useEffect, useMemo, useReducer, type FC } from "react"
 import Image from "next/image"
+import { cn, toInt, useColorScheme } from "@/lib/utils"
+import type { CardProps } from "@/types/card"
+import { motion, useMotionValue, useTransform } from "framer-motion"
 
 const clamp = (_: unknown, num: number) =>
   Math.min(Math.max(num * 0.1, -30), 30)
 
 const CLASSNAME = cn(
-  "m-8 max-w-[84vw] overflow-hidden md:w-[32rem] min-h-[28rem] h-[60vh] md:h-[80vh] backdrop-saturate-150 border border-neutral-200 backdrop-blur-md dark:border-neutral-900/30 absolute cursor-grab rounded-xl gap-4 flex flex-col bg-neutral-100 dark:bg-neutral-800 p-6 md:p-8"
+  "absolute m-8 flex h-[60vh] min-h-[28rem] max-w-[84vw] cursor-grab flex-col gap-4 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100 p-6 dark:border-neutral-900/30 dark:bg-neutral-800 md:h-[80vh] md:w-[32rem] md:p-8 md:backdrop-blur-md md:backdrop-saturate-150"
 )
 
 const CONSTRAINTS = { left: 0, right: 0, top: 0, bottom: 0 }
@@ -40,9 +40,16 @@ export const Card: FC<CardProps> = ({
     { x: 0 }
   )
 
+  const isMobile =
+    typeof window !== "undefined" ? window.innerWidth <= 768 : true
+
   const scheme = useColorScheme()
   const states = ((s: typeof scheme) =>
-    s === "dark"
+    isMobile
+      ? s === "dark"
+        ? ["#ef4444", "#171717", "#171717", "#171717", "#22c55e"]
+        : ["#fca5a5", "#f5f5f5", "#f5f5f5", "#f5f5f5", "#86efac"]
+      : s === "dark"
       ? [
           "linear-gradient(225deg, #ef4444a3 0%, #f43f5ea3 100%)",
           "linear-gradient(225deg, #262626a3 0%, #171717a3 100%)",
@@ -71,25 +78,25 @@ export const Card: FC<CardProps> = ({
   const className = cn(
     CLASSNAME,
     "shadow-xl dark:shadow-neutral-950/50",
+    "will-change-transform",
     `z-${z}`
   )
 
   return (
     <motion.div
+      draggable
       drag={true}
       style={{ rotate, background }}
       className={className}
       dragElastic={ELASTIC}
       dragTransition={{
-        min: 10,
-        max: 100,
         bounceDamping: 10,
         bounceStiffness: 10,
         power: 10,
       }}
       dragSnapToOrigin={true}
       dragConstraints={CONSTRAINTS}
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, y: 100, ...leaveBy }}
       onDragEnd={(_, { point }) => {
@@ -123,7 +130,7 @@ export const Card: FC<CardProps> = ({
           <motion.div className="relative block h-full w-full">
             <Image
               className="pointer-events-none m-0 rounded-md border border-neutral-200 object-cover shadow-md dark:border-neutral-900/30 dark:shadow-neutral-950/30"
-              sizes="(max-width: 768px) 30vw, 40vw" // TODO: Test this
+              sizes="(max-width: 768px) 50vw, 40vw" // TODO: Test this
               priority={z === 10}
               src={urlToImage}
               loading="eager"

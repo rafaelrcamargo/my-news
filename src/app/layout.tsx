@@ -1,7 +1,8 @@
 import { FC, PropsWithChildren } from "react"
-import { Open_Sans } from "next/font/google"
 import type { Metadata } from "next"
+import { Open_Sans } from "next/font/google"
 import { cn } from "@/lib/utils"
+
 import "@/styles/globals.css"
 
 const inter = Open_Sans({

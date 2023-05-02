@@ -1,7 +1,6 @@
-import { Outro } from "@/components/outro"
-import { Spinner } from "@/components/icons"
-
 import dynamic from "next/dynamic"
+import { Spinner } from "@/components/icons"
+import { Outro } from "@/components/outro"
 
 const Deck = dynamic(() => import("../components/deck"), {
   loading: () => <Spinner />,
