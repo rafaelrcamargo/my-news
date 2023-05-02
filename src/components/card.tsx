@@ -123,7 +123,7 @@ export const Card: FC<CardProps> = ({
           <motion.div className="relative block h-full w-full">
             <Image
               className="pointer-events-none m-0 rounded-md border border-neutral-200 object-cover shadow-md dark:border-neutral-900/30 dark:shadow-neutral-950/30"
-              sizes="400px" // TODO: Test this
+              sizes="(max-width: 768px) 30vw, 40vw" // TODO: Test this
               priority={z === 10}
               src={urlToImage}
               loading="eager"

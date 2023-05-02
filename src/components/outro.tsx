@@ -4,6 +4,8 @@ export const Outro = () => (
   <div className="center middle absolute w-[68vw] max-w-sm flex-col gap-6 text-center opacity-0 fade-in">
     <a
       href="/"
+      title="Go back to the start"
+      aria-label="Go back to the start"
       className="center rounded-full border border-neutral-500/30 p-4"
     >
       <Repeat />
