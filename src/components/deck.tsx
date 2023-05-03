@@ -1,32 +1,24 @@
 "use client"
 
-import { useReducer } from "react"
-import { Card, Placeholder } from "@/components/card"
-import NEWS from "@/data/news"
-import { AnimatePresence, motion } from "framer-motion"
+import type { Dispatch, FC } from "react"
+import { Card } from "@/components/card"
+import { Placeholder } from "@/components/placeholder"
+import type NEWS from "@/data/news"
+import { type Theme } from "@/types/global"
+import { AnimatePresence } from "framer-motion"
 
-const actions = (state: typeof NEWS.articles, action: "LIKE" | "DISLIKE") => {
-  switch (action) {
-    case "LIKE":
-      console.log("Liked: ", state[0]?.title)
-      return state.slice(1)
-    case "DISLIKE":
-      console.log("Disliked: ", state[0]?.title)
-      return state.slice(1)
-    default:
-      return state
-  }
-}
-
-const Deck = () => {
-  const [articles, dispatch] = useReducer(actions, NEWS.articles)
-
+const Deck: FC<{
+  theme: Theme
+  dispatch: Dispatch<"LIKE" | "DISLIKE">
+  articles: typeof NEWS.articles
+}> = ({ theme, articles, dispatch }) => {
   return (
-    <motion.div className="center relative h-screen w-full">
+    <div className="center relative h-screen w-full overflow-hidden">
       <AnimatePresence>
         {articles.map((article, i) =>
           i < 2 ? (
             <Card
+              theme={theme}
               key={article.title}
               actions={dispatch}
               {...article}
@@ -37,7 +29,7 @@ const Deck = () => {
           )
         )}
       </AnimatePresence>
-    </motion.div>
+    </div>
   )
 }
 

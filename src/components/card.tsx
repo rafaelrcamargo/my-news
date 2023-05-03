@@ -1,15 +1,23 @@
 "use client"
 
-import { memo, useEffect, useMemo, useReducer, type FC } from "react"
+import { useCallback, useLayoutEffect, useReducer, type FC } from "react"
 import Image from "next/image"
-import { cn, toInt, useColorScheme } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import type { CardProps } from "@/types/card"
-import { motion, useMotionValue, useTransform } from "framer-motion"
+import { Theme } from "@/types/global"
+import {
+  PanInfo,
+  ResolvedValues,
+  motion,
+  useMotionValue,
+  useTransform,
+  useWillChange,
+} from "framer-motion"
 
 const clamp = (_: unknown, num: number) =>
   Math.min(Math.max(num * 0.1, -30), 30)
 
-const CLASSNAME = cn(
+export const CLASSNAME = cn(
   "absolute m-8 flex h-[60vh] min-h-[28rem] max-w-[84vw] cursor-grab flex-col gap-4 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100 p-6 dark:border-neutral-900/30 dark:bg-neutral-800 md:h-[80vh] md:w-[32rem] md:p-8 md:backdrop-blur-md md:backdrop-saturate-150"
 )
 
@@ -22,6 +30,7 @@ const ELASTIC = {
 }
 
 export const Card: FC<CardProps> = ({
+  theme,
   title,
   description,
   urlToImage,
@@ -36,20 +45,19 @@ export const Card: FC<CardProps> = ({
 
   const [leaveBy, setLeaveBy] = useReducer(
     (_: unknown, exit: "left" | "right") =>
-      exit === "left" ? { x: -800 } : { x: 800 },
+      exit === "left" ? { x: -600 } : { x: 600 },
     { x: 0 }
   )
 
   const isMobile =
-    typeof window !== "undefined" ? window.innerWidth <= 768 : true
+    typeof window !== "undefined" ? window.innerWidth <= 768 : false
 
-  const scheme = useColorScheme()
-  const states = ((s: typeof scheme) =>
+  const states = ((t: Theme) =>
     isMobile
-      ? s === "dark"
-        ? ["#ef4444", "#171717", "#171717", "#171717", "#22c55e"]
+      ? t === "dark"
+        ? ["#ef4444", "#262626", "#262626", "#262626", "#22c55e"]
         : ["#fca5a5", "#f5f5f5", "#f5f5f5", "#f5f5f5", "#86efac"]
-      : s === "dark"
+      : t === "dark"
       ? [
           "linear-gradient(225deg, #ef4444a3 0%, #f43f5ea3 100%)",
           "linear-gradient(225deg, #262626a3 0%, #171717a3 100%)",
@@ -63,12 +71,12 @@ export const Card: FC<CardProps> = ({
           "linear-gradient(225deg, #fafafaa3 0%, #f5f5f5a3 100%)",
           "linear-gradient(225deg, #fafafaa3 0%, #f5f5f5a3 100%)",
           "linear-gradient(225deg, #86efaca3 0%, #bef264a3 100%)",
-        ])(scheme)
+        ])(theme)
 
   const input = [-100, -30, 0, 30, 100]
   const background = useTransform(value, input, states)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const update = () => setRotate(value.get())
     const unsubscribe = value.on("change", update)
 
@@ -78,41 +86,50 @@ export const Card: FC<CardProps> = ({
   const className = cn(
     CLASSNAME,
     "shadow-xl dark:shadow-neutral-950/50",
-    "will-change-transform",
     `z-${z}`
+  )
+
+  const willChange = useWillChange()
+
+  const action = (type: "LIKE" | "DISLIKE") => {
+    if (type === "LIKE") {
+      setLeaveBy("right")
+      return actions("LIKE")
+    } else {
+      setLeaveBy("left")
+      return actions("DISLIKE")
+    }
+  }
+
+  const checkBounds = (_: unknown, { point }: PanInfo) => {
+    const { LIKE, DISLIKE } = {
+      LIKE: isMobile ? 350 : 500,
+      DISLIKE: isMobile ? 300 : 200,
+    }
+
+    if (point.x > LIKE) action("LIKE")
+    if (point.x < DISLIKE) action("DISLIKE")
+    if (point.y < -20) window.open(url, "_blank")
+  }
+
+  const updateRotation = useCallback(
+    (latest: ResolvedValues) => value.updateAndNotify(Number(latest.x ?? 0)),
+    [value]
   )
 
   return (
     <motion.div
-      draggable
       drag={true}
-      style={{ rotate, background }}
+      style={{ willChange, rotate, background }}
       className={className}
       dragElastic={ELASTIC}
-      dragTransition={{
-        bounceDamping: 10,
-        bounceStiffness: 10,
-        power: 10,
-      }}
       dragSnapToOrigin={true}
       dragConstraints={CONSTRAINTS}
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, y: 100, ...leaveBy }}
-      onDragEnd={(_, { point }) => {
-        if (point.y < -20) window.open(url, "_blank")
-
-        if (point.x < 400) {
-          setLeaveBy("left")
-          actions("DISLIKE")
-        }
-
-        if (point.x > 600) {
-          setLeaveBy("right")
-          actions("LIKE")
-        }
-      }}
-      onUpdate={latest => value.updateAndNotify(Number(latest.x ?? 0))}
+      onDragEnd={checkBounds}
+      onUpdate={updateRotation}
     >
       <section className="prose prose-sm prose-neutral flex h-[-webkit-fill-available] flex-col dark:prose-invert">
         <h1 className="text-base md:text-2xl">{title}</h1>
@@ -143,28 +160,3 @@ export const Card: FC<CardProps> = ({
     </motion.div>
   )
 }
-
-const change = (old: { title: string }, current?: { title: string }) =>
-  typeof window !== "undefined"
-    ? old?.title.length === current?.title.length
-    : false
-
-type PlaceholderProps = Pick<CardProps, "title">
-export const Placeholder = memo(function Placeholder({
-  title,
-}: PlaceholderProps) {
-  const int = useMemo(() => {
-    return toInt(title)
-  }, [title])
-
-  return (
-    <motion.div
-      className={`${CLASSNAME} z-1 min-w-[84vw] border border-neutral-200 shadow-md shadow-neutral-500/5 dark:border-neutral-900/30 dark:shadow-neutral-900/30 md:w-[32rem] md:min-w-0`}
-      style={{ rotate: int }}
-      transition={{ delay: int * 0.15 }}
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-    />
-  )
-},
-change)

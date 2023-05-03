@@ -1,4 +1,4 @@
-import { Repeat } from "@/components/icons"
+import { Repeat } from "lucide-react"
 
 export const Outro = () => (
   <div className="center middle absolute w-[68vw] max-w-sm flex-col gap-6 text-center opacity-0 fade-in">
@@ -8,7 +8,7 @@ export const Outro = () => (
       aria-label="Go back to the start"
       className="center rounded-full border border-neutral-500/30 p-4"
     >
-      <Repeat />
+      <Repeat className="stroke-neutral-500" />
     </a>
 
     <span className="font-light text-neutral-500">

@@ -11,10 +11,3 @@ export const toInt = (x: string = "") =>
       .toFixed()
       .slice(1, 2)
   ) || 0
-
-export const useColorScheme = () =>
-  typeof window !== "undefined"
-    ? window?.matchMedia?.("(prefers-color-scheme:dark)")?.matches
-      ? "dark"
-      : "light"
-    : "dark"

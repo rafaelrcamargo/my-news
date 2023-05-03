@@ -1,16 +1,19 @@
-import dynamic from "next/dynamic"
-import { Spinner } from "@/components/icons"
+import { cookies } from "next/headers"
 import { Outro } from "@/components/outro"
+import { Toggle } from "@/components/toggle"
+import { Wrapper } from "@/components/wrapper"
+import { Theme } from "@/types/global"
 
-const Deck = dynamic(() => import("../components/deck"), {
-  loading: () => <Spinner />,
-})
+const Home = () => {
+  const theme = (cookies().get("theme")?.value ?? "light") as Theme
 
-const Home = () => (
-  <div className="bg-pattern">
-    <Deck />
-    <Outro />
-  </div>
-)
+  return (
+    <div className="bg-pattern">
+      <Toggle theme={theme} />
+      <Wrapper theme={theme} />
+      <Outro />
+    </div>
+  )
+}
 
 export default Home

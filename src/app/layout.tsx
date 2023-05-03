@@ -1,7 +1,8 @@
-import { FC, PropsWithChildren } from "react"
+import { type FC, type PropsWithChildren } from "react"
 import type { Metadata } from "next"
 import { Open_Sans } from "next/font/google"
-import { cn } from "@/lib/utils"
+import { cookies } from "next/headers"
+import { Theme } from "@/types/global"
 
 import "@/styles/globals.css"
 
@@ -11,15 +12,19 @@ const inter = Open_Sans({
 })
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
+  const theme = (cookies().get("theme")?.value ?? "light") as Theme
+
   return (
-    <html
-      lang="en"
-      className={cn(
-        "overflow-x-hidden bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100",
-        inter.variable
-      )}
-    >
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={inter.variable}>
+      <body className={theme}>
+        <main
+          className={
+            "bg-neutral-100 text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100"
+          }
+        >
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
