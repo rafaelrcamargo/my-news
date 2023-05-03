@@ -1,6 +1,7 @@
 "use client"
 
 import type { Dispatch, FC } from "react"
+
 import { Card } from "@/components/card"
 import { Placeholder } from "@/components/placeholder"
 import type NEWS from "@/data/news"

@@ -1,4 +1,5 @@
 import { cookies } from "next/headers"
+
 import { Outro } from "@/components/outro"
 import { Toggle } from "@/components/toggle"
 import { Wrapper } from "@/components/wrapper"

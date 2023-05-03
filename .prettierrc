@@ -15,7 +15,7 @@
     "^styles/(.*)$",
     "^[./]"
   ],
-  "importOrderSeparation": false,
+  "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
   "importOrderBuiltinModulesToTop": true,
   "importOrderParserPlugins": [

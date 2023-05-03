@@ -1,6 +1,7 @@
 "use client"
 
 import { useReducer, type FC } from "react"
+
 import Deck from "@/components/deck"
 import Nav from "@/components/nav"
 import NEWS from "@/data/news"

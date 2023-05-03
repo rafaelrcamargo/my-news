@@ -1,6 +1,7 @@
 "use client"
 
 import { type FC } from "react"
+
 import { NAV_CLASSNAME } from "@/components/nav"
 import { cn } from "@/lib/utils"
 import { type Theme } from "@/types/global"

@@ -1,7 +1,9 @@
 "use client"
 
 import { useCallback, useLayoutEffect, useReducer, type FC } from "react"
+
 import Image from "next/image"
+
 import { cn } from "@/lib/utils"
 import type { CardProps } from "@/types/card"
 import { Theme } from "@/types/global"
