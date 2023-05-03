@@ -75,7 +75,7 @@ export const Card: FC<CardProps> = ({
           "linear-gradient(225deg, #86efaca3 0%, #bef264a3 100%)",
         ])(theme)
 
-  const input = [-100, -30, 0, 30, 100]
+  const input = [-100, -10, 0, 10, 100]
   const background = useTransform(value, input, states)
 
   useLayoutEffect(() => {
@@ -105,9 +105,11 @@ export const Card: FC<CardProps> = ({
 
   const checkBounds = (_: unknown, { point }: PanInfo) => {
     const { LIKE, DISLIKE } = {
-      LIKE: isMobile ? 350 : 500,
-      DISLIKE: isMobile ? 300 : 200,
+      LIKE: isMobile ? 300 : 600,
+      DISLIKE: isMobile ? 150 : 300,
     }
+
+    console.log(isMobile, point, LIKE, DISLIKE)
 
     if (point.x > LIKE) action("LIKE")
     if (point.x < DISLIKE) action("DISLIKE")
