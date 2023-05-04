@@ -1,12 +1,9 @@
 import { type FC, type PropsWithChildren } from "react"
-
 import { type Metadata } from "next"
 import { Open_Sans } from "next/font/google"
 import { cookies } from "next/headers"
-
-import { cn } from "@/lib/utils"
 import { Analytics } from "@vercel/analytics/react"
-
+import { cn } from "@/lib/utils"
 import "@/styles/globals.css"
 
 const font = Open_Sans({

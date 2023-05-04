@@ -1,8 +1,6 @@
 import { Suspense } from "react"
-
 import dynamic from "next/dynamic"
 import { cookies } from "next/headers"
-
 import { Spinner } from "@/components/icons"
 import { Outro } from "@/components/outro"
 import { Toggle } from "@/components/toggle"

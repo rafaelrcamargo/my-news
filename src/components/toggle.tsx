@@ -1,11 +1,10 @@
 "use client"
 
 import { type FC } from "react"
-
-import { NAV_CLASSNAME } from "@/components/nav"
-import { cn } from "@/lib/utils"
-import { type Theme } from "@/types/global"
 import { Moon, Sun } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { NAV_CLASSNAME } from "@/components/nav"
+import { type Theme } from "@/types/global"
 
 export const Toggle: FC<{ theme: Theme }> = ({ theme }) => {
   const toggle = () => {
@@ -17,8 +16,7 @@ export const Toggle: FC<{ theme: Theme }> = ({ theme }) => {
     <section
       className={cn(
         NAV_CLASSNAME,
-        "right-0 top-0 md:bottom-0",
-        "m-4 h-12 w-12 p-2"
+        "right-0 top-0 m-4 h-12 w-12 p-2 md:bottom-0"
       )}>
       <div className="center m-auto">
         <button onClick={toggle} type="button">

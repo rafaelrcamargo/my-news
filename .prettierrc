@@ -8,27 +8,17 @@
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
-    "",
     "<THIRD_PARTY_MODULES>",
-    "",
-    "^types$",
-    "^types/(.*)$",
-    "^config/(.*)$",
-    "^lib/(.*)$",
-    "^components/(.*)$",
-    "^styles/(.*)$",
-    "^[./]"
+    "^([A-Za-z]|@[^s/])",
+		"^@/(lib)(/.*)?$",
+    "^@/(.*)?$"
   ],
-  "importOrderSeparation": true,
+  "importOrderSeparation": false,
   "importOrderSortSpecifiers": true,
   "importOrderBuiltinModulesToTop": true,
-  "importOrderParserPlugins": [
-    "jsx",
-    "typescript",
-    "decorators-legacy"
-  ],
   "importOrderMergeDuplicateImports": true,
   "importOrderCombineTypeAndValueImports": true,
+  "importOrderParserPlugins": ["jsx", "typescript", "decorators-legacy"],
   "plugins": [
     "prettier-plugin-tailwindcss",
     "@ianvs/prettier-plugin-sort-imports"

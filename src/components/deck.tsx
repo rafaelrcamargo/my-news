@@ -1,11 +1,10 @@
 "use client"
 
 import { FC, type Dispatch } from "react"
-
+import { AnimatePresence } from "framer-motion"
 import { Card } from "@/components/card"
 import { Placeholder } from "@/components/placeholder"
 import { type News, type Theme } from "@/types/global"
-import { AnimatePresence } from "framer-motion"
 
 const Deck: FC<{
   theme: Theme
