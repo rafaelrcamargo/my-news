@@ -2,6 +2,9 @@
   "semi": false,
   "singleQuote": false,
   "arrowParens": "avoid",
+  "trailingComma": "none",
+  "bracketSameLine": true,
+  "bracketSpacing": true,
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",

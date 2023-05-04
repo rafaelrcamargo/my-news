@@ -14,7 +14,7 @@ const change = (old: PlaceholderProps, current: PlaceholderProps) =>
 
 type PlaceholderProps = Pick<CardProps, "title">
 export const Placeholder = memo(function Placeholder({
-  title,
+  title
 }: PlaceholderProps) {
   const int = useMemo(() => {
     return toInt(title)

@@ -5,7 +5,7 @@ const NEWS = {
     {
       source: {
         id: null,
-        name: "Yahoo Entertainment",
+        name: "Yahoo Entertainment"
       },
       author: "Callie Lawson-Freeman",
       title:
@@ -17,12 +17,12 @@ const NEWS = {
         "https://s.yimg.com/ny/api/res/1.2/sWs6EbNvEDzZr_rZme1PgA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MjQ-/https://s.yimg.com/os/creatr-uploaded-images/2023-04/0470af60-e7a4-11ed-bfae-48b22bb6a910",
       publishedAt: "2023-04-30T22:17:26Z",
       content:
-        "It was win or go home on Sunday in Sacramento and Stephen Curry decided the Golden State Warriors' season wasnt ending yet. Advancing to the Western Conference semifinals, Curry made basketball magic… [+2091 chars]",
+        "It was win or go home on Sunday in Sacramento and Stephen Curry decided the Golden State Warriors' season wasnt ending yet. Advancing to the Western Conference semifinals, Curry made basketball magic… [+2091 chars]"
     },
     {
       source: {
         id: "fox-news",
-        name: "Fox News",
+        name: "Fox News"
       },
       author: "Janelle Ash, Larry Fink",
       title:
@@ -34,12 +34,12 @@ const NEWS = {
         "https://static.foxnews.com/foxnews.com/content/uploads/2023/04/1d278a8e-willie-nelson.jpg",
       publishedAt: "2023-04-30T21:15:00Z",
       content:
-        'Texas troubadour Willie Nelson had a birthday party that will be remembered.\r\n"Long Story Short: Willie Nelson 90" kicked off on Saturday night, which was Nelson\'s birthday. The two-night event at th… [+4585 chars]',
+        'Texas troubadour Willie Nelson had a birthday party that will be remembered.\r\n"Long Story Short: Willie Nelson 90" kicked off on Saturday night, which was Nelson\'s birthday. The two-night event at th… [+4585 chars]'
     },
     {
       source: {
         id: null,
-        name: "The Athletic",
+        name: "The Athletic"
       },
       author: "Mike Jones",
       title:
@@ -51,12 +51,12 @@ const NEWS = {
         "https://cdn.theathletic.com/app/uploads/2023/04/29222105/GettyImages-1485906392-scaled-e1682821312234-1024x684.jpg",
       publishedAt: "2023-04-30T20:57:00Z",
       content:
-        "The 2023 NFL Draft is officially in the books. With 259 selections made, the leagues teams will soon begin figuring out how to fit all of these puzzle pieces together.\r\nObviously, it will take some t… [+4416 chars]",
+        "The 2023 NFL Draft is officially in the books. With 259 selections made, the leagues teams will soon begin figuring out how to fit all of these puzzle pieces together.\r\nObviously, it will take some t… [+4416 chars]"
     },
     {
       source: {
         id: "reuters",
-        name: "Reuters",
+        name: "Reuters"
       },
       author: null,
       title: "Sudan sides trade blame, fight on despite ceasefire - Reuters",
@@ -67,12 +67,12 @@ const NEWS = {
         "https://www.reuters.com/resizer/vgSeOPd4J-AlG4qjAx_9Ow_AcVI=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/6FDTOSZPTFIPPFP4BBN72HPFXM.jpg",
       publishedAt: "2023-04-30T20:47:00Z",
       content:
-        "KHARTOUM, April 30 (Reuters) - Sudan's rival military forces accused each other of fresh violations of a ceasefire on Sunday as their deadly conflict rumbled on for a third week despite warnings of a… [+5543 chars]",
+        "KHARTOUM, April 30 (Reuters) - Sudan's rival military forces accused each other of fresh violations of a ceasefire on Sunday as their deadly conflict rumbled on for a third week despite warnings of a… [+5543 chars]"
     },
     {
       source: {
         id: "cnn",
-        name: "CNN",
+        name: "CNN"
       },
       author: "Aaron Pellish",
       title:
@@ -84,12 +84,12 @@ const NEWS = {
         "https://media.cnn.com/api/v1/images/stellar/prod/230430160320-sudan-conflict-0430-restricted.jpg?c=16x9&q=w_800,c_fill",
       publishedAt: "2023-04-30T20:08:00Z",
       content:
-        "A second convoy of US citizens organized by the US government arrived in Port Sudan on Sunday as part of an effort to evacuate Americans from the Sudan conflict.\r\nA second USG-organized convoy arrive… [+2681 chars]",
+        "A second convoy of US citizens organized by the US government arrived in Port Sudan on Sunday as part of an effort to evacuate Americans from the Sudan conflict.\r\nA second USG-organized convoy arrive… [+2681 chars]"
     },
     {
       source: {
         id: null,
-        name: "CBS Sports",
+        name: "CBS Sports"
       },
       author: "",
       title:
@@ -100,12 +100,12 @@ const NEWS = {
         "https://sportshub.cbsistatic.com/i/r/2023/04/29/36fb60eb-f9e4-458f-91f1-7988eb9e2cad/thumbnail/1200x675/4bf664e29f5b4e2b8c9de46b2b78354d/adrian-martinez-g.jpg",
       publishedAt: "2023-04-30T19:18:00Z",
       content:
-        "The 2023 NFL Draft has ended, with 259 players hearing their names called over the past three days. But for those players who didn't hear their names called, hope is not lost. Shortly after the draft… [+11576 chars]",
+        "The 2023 NFL Draft has ended, with 259 players hearing their names called over the past three days. But for those players who didn't hear their names called, hope is not lost. Shortly after the draft… [+11576 chars]"
     },
     {
       source: {
         id: "usa-today",
-        name: "USA Today",
+        name: "USA Today"
       },
       author: "Ken Tran",
       title:
@@ -117,12 +117,12 @@ const NEWS = {
         "https://www.gannett-cdn.com/presto/2023/04/28/USAT/da44bbf4-3ebd-4eda-896c-a0ffe79073c9-XXX_IMG_GTY_1246564047_A_HUM_1_1_5S12PD5NS.JPG?crop=1023,576,x0,y52&width=1023&height=576&format=pjpg&auto=webp",
       publishedAt: "2023-04-30T19:14:26Z",
       content:
-        "Rep. Alexandria Ocasio-Cortez, D-N.Y., is not planning to issue a primary challenge for Sen. Kirsten Gillibrand, D-N.Y.s seat in the Senate, which is up for reelection in 2024.\r\nShe is not planning t… [+1027 chars]",
+        "Rep. Alexandria Ocasio-Cortez, D-N.Y., is not planning to issue a primary challenge for Sen. Kirsten Gillibrand, D-N.Y.s seat in the Senate, which is up for reelection in 2024.\r\nShe is not planning t… [+1027 chars]"
     },
     {
       source: {
         id: null,
-        name: "New York Post",
+        name: "New York Post"
       },
       author: "Isabel Keane",
       title:
@@ -134,12 +134,12 @@ const NEWS = {
         "https://nypost.com/wp-content/uploads/sites/2/2023/04/NYPICHPDPICT000010395788.jpg?quality=75&strip=all&w=1024",
       publishedAt: "2023-04-30T19:11:00Z",
       content:
-        "The massive fire that broke out at an oil reserve in Russian-occupied Sevastopol on Saturday was an attack on Russian logistics and part of Ukraine’s “preparations” for a major counter-offensive.\r\nA … [+3682 chars]",
+        "The massive fire that broke out at an oil reserve in Russian-occupied Sevastopol on Saturday was an attack on Russian logistics and part of Ukraine’s “preparations” for a major counter-offensive.\r\nA … [+3682 chars]"
     },
     {
       source: {
         id: "fortune",
-        name: "Fortune",
+        name: "Fortune"
       },
       author: "Lance Lambert",
       title:
@@ -151,12 +151,12 @@ const NEWS = {
         "https://content.fortune.com/wp-content/uploads/2023/04/GettyImages-507136400-e1682881597408.jpg?resize=1200,600",
       publishedAt: "2023-04-30T19:05:00Z",
       content:
-        "Federal Reserve actions to fight inflation through higher interest rates continued to impact homebuying demand in the [fourth] quarter, PulteGroup told investors in January.\r\nHowever, thats already o… [+3927 chars]",
+        "Federal Reserve actions to fight inflation through higher interest rates continued to impact homebuying demand in the [fourth] quarter, PulteGroup told investors in January.\r\nHowever, thats already o… [+3927 chars]"
     },
     {
       source: {
         id: "cnn",
-        name: "CNN",
+        name: "CNN"
       },
       author: "Alli Rosenbloom",
       title:
@@ -168,12 +168,12 @@ const NEWS = {
         "https://media.cnn.com/api/v1/images/stellar/prod/230430131519-04-super-mario-bros-movie.jpg?c=16x9&q=w_800,c_fill",
       publishedAt: "2023-04-30T18:53:00Z",
       content:
-        "Nearly one month after The Super Mario Bros. Movie premiered with an impressive opening weekend at the box office, the animated film is expected to hit another major milestone. \r\nThe movie is set to … [+1507 chars]",
+        "Nearly one month after The Super Mario Bros. Movie premiered with an impressive opening weekend at the box office, the animated film is expected to hit another major milestone. \r\nThe movie is set to … [+1507 chars]"
     },
     {
       source: {
         id: null,
-        name: "Daily Mail",
+        name: "Daily Mail"
       },
       author: "Katherine Lawton",
       title:
@@ -185,12 +185,12 @@ const NEWS = {
         "https://i.dailymail.co.uk/1s/2023/04/30/19/70409013-0-image-a-19_1682879248496.jpg",
       publishedAt: "2023-04-30T18:38:35Z",
       content:
-        "A new artificial intelligence tool can accurately identify cancer in a development doctors and scientists said could speed up diagnosis of the disease. \r\nThe algorithm performs more effectively than … [+2635 chars]",
+        "A new artificial intelligence tool can accurately identify cancer in a development doctors and scientists said could speed up diagnosis of the disease. \r\nThe algorithm performs more effectively than … [+2635 chars]"
     },
     {
       source: {
         id: null,
-        name: "KTLA Los Angeles",
+        name: "KTLA Los Angeles"
       },
       author: "Will Conybeare",
       title:
@@ -202,12 +202,12 @@ const NEWS = {
         "https://ktla.com/wp-content/uploads/sites/4/2023/04/AP23037634781772-e1676603444755.jpg?w=1280",
       publishedAt: "2023-04-30T18:37:00Z",
       content:
-        "The Los Angeles County Department of Public Health is warning residents that the newest Omicron strain of COVID-19 may come with some new symptoms. \r\nThe U.S. Centers for Disease Control and Preventi… [+2139 chars]",
+        "The Los Angeles County Department of Public Health is warning residents that the newest Omicron strain of COVID-19 may come with some new symptoms. \r\nThe U.S. Centers for Disease Control and Preventi… [+2139 chars]"
     },
     {
       source: {
         id: null,
-        name: "YouTube",
+        name: "YouTube"
       },
       author: null,
       title:
@@ -217,12 +217,12 @@ const NEWS = {
       urlToImage: null,
       publishedAt: "2023-04-30T18:14:19Z",
       content:
-        "Your browser isnt supported anymore. Update it to get the best YouTube experience and our latest features. Learn more\r\nRemind me later",
+        "Your browser isnt supported anymore. Update it to get the best YouTube experience and our latest features. Learn more\r\nRemind me later"
     },
     {
       source: {
         id: "the-washington-post",
-        name: "The Washington Post",
+        name: "The Washington Post"
       },
       author: "Tara Parker-Pope",
       title:
@@ -234,12 +234,12 @@ const NEWS = {
         "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/QQFDOPAWRYDNJBV4ZAUAMUOJ4I.jpg&w=1440",
       publishedAt: "2023-04-30T18:01:34Z",
       content:
-        "Comment on this story\r\nComment\r\nIn a revealing interview, the actor Michael J. Fox spoke about his own mortality and the challenges of living with Parkinsons disease for more than 30 years, including… [+3402 chars]",
+        "Comment on this story\r\nComment\r\nIn a revealing interview, the actor Michael J. Fox spoke about his own mortality and the challenges of living with Parkinsons disease for more than 30 years, including… [+3402 chars]"
     },
     {
       source: {
         id: null,
-        name: "YouTube",
+        name: "YouTube"
       },
       author: null,
       title:
@@ -249,12 +249,12 @@ const NEWS = {
       url: "https://www.youtube.com/watch?v=oTuqXu7NdB0",
       urlToImage: "https://i.ytimg.com/vi/oTuqXu7NdB0/maxresdefault.jpg",
       publishedAt: "2023-04-30T17:47:13Z",
-      content: null,
+      content: null
     },
     {
       source: {
         id: null,
-        name: "YouTube",
+        name: "YouTube"
       },
       author: null,
       title:
@@ -264,12 +264,12 @@ const NEWS = {
       url: "https://www.youtube.com/watch?v=AoO4RfV8tM4",
       urlToImage: "https://i.ytimg.com/vi/AoO4RfV8tM4/maxresdefault.jpg",
       publishedAt: "2023-04-30T17:30:01Z",
-      content: null,
+      content: null
     },
     {
       source: {
         id: "engadget",
-        name: "Engadget",
+        name: "Engadget"
       },
       author: "https://www.engadget.com/about/editors/igor-bonifacic",
       title:
@@ -281,12 +281,12 @@ const NEWS = {
         "https://s.yimg.com/uu/api/res/1.2/t8TzdTrNCGrn4iSB45AH6w--~B/Zmk9ZmlsbDtoPTYzMDtweW9mZj0wO3c9MTIwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2022-09/42bfd920-3e6d-11ed-bfb6-ac78ec934026.cf.jpg",
       publishedAt: "2023-04-30T16:28:24Z",
       content:
-        "Apple is reportedly working on its most significant software overhaul to watchOS in recent memory. According to Bloombergs\r\n Mark Gurman\r\n, the company is redesigning the Apple Watchs user interface … [+1469 chars]",
+        "Apple is reportedly working on its most significant software overhaul to watchOS in recent memory. According to Bloombergs\r\n Mark Gurman\r\n, the company is redesigning the Apple Watchs user interface … [+1469 chars]"
     },
     {
       source: {
         id: null,
-        name: "MarketWatch",
+        name: "MarketWatch"
       },
       author: "Vivien Lou Chen",
       title:
@@ -297,12 +297,12 @@ const NEWS = {
       urlToImage: "https://images.mktw.net/im-771341/social",
       publishedAt: "2023-04-30T16:01:00Z",
       content:
-        "Multiple risks are raising the stakes in financial markets and for the U.S. economy as Federal Reserve policy makers prepare to gather this week.The Fed is widely expected to deliver a quarter-of-a-p… [+340 chars]",
+        "Multiple risks are raising the stakes in financial markets and for the U.S. economy as Federal Reserve policy makers prepare to gather this week.The Fed is widely expected to deliver a quarter-of-a-p… [+340 chars]"
     },
     {
       source: {
         id: null,
-        name: "Forbes",
+        name: "Forbes"
       },
       author: "Iain Martin",
       title:
@@ -314,12 +314,12 @@ const NEWS = {
         "https://imageio.forbes.com/specials-images/imageserve/644e397d741bc46ddf049831/0x0.jpg?format=jpg&width=1200",
       publishedAt: "2023-04-30T15:35:15Z",
       content:
-        "The Himalayan kingdom confirmed it has quietly been running a bitcoin mining operation as mystery surrounds the scale of its earlier cryptocurrency investments. \r\nAFP via Getty Images\r\nThe Himalayan … [+12047 chars]",
+        "The Himalayan kingdom confirmed it has quietly been running a bitcoin mining operation as mystery surrounds the scale of its earlier cryptocurrency investments. \r\nAFP via Getty Images\r\nThe Himalayan … [+12047 chars]"
     },
     {
       source: {
         id: null,
-        name: "SciTechDaily",
+        name: "SciTechDaily"
       },
       author: null,
       title:
@@ -331,9 +331,9 @@ const NEWS = {
         "https://scitechdaily.com/images/New-Research-Redefines-Mammalian-Tree-of-Life-scaled.jpg",
       publishedAt: "2023-04-30T15:29:16Z",
       content:
-        "ByTexas A&amp;M UniversityApril 30, 2023\r\nResearchers from Texas A&amp;M University have used the largest mammalian genomic dataset to track the evolutionary history of mammals, concluding that mamma… [+11339 chars]",
-    },
-  ],
+        "ByTexas A&amp;M UniversityApril 30, 2023\r\nResearchers from Texas A&amp;M University have used the largest mammalian genomic dataset to track the evolutionary history of mammals, concluding that mamma… [+11339 chars]"
+    }
+  ]
 }
 
 export default NEWS

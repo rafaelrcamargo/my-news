@@ -6,8 +6,7 @@ export const Outro = () => (
       href="/"
       title="Go back to the start"
       aria-label="Go back to the start"
-      className="center rounded-full border border-neutral-500/30 p-4"
-    >
+      className="center rounded-full border border-neutral-500/30 p-4">
       <Repeat className="stroke-neutral-500" />
     </a>
 

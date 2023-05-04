@@ -13,7 +13,7 @@ import {
   motion,
   useMotionValue,
   useTransform,
-  useWillChange,
+  useWillChange
 } from "framer-motion"
 
 const clamp = (_: unknown, num: number) =>
@@ -28,7 +28,7 @@ const ELASTIC = {
   left: 0.25,
   right: 0.25,
   top: 0.15,
-  bottom: 0.05,
+  bottom: 0.05
 }
 
 export const Card: FC<CardProps> = ({
@@ -40,7 +40,7 @@ export const Card: FC<CardProps> = ({
   author,
   source,
   actions,
-  z,
+  z
 }) => {
   const value = useMotionValue(0)
   const [rotate, setRotate] = useReducer(clamp, 0)
@@ -65,14 +65,14 @@ export const Card: FC<CardProps> = ({
           "linear-gradient(225deg, #262626a3 0%, #171717a3 100%)",
           "linear-gradient(225deg, #262626a3 0%, #171717a3 100%)",
           "linear-gradient(225deg, #262626a3 0%, #171717a3 100%)",
-          "linear-gradient(225deg, #22c55ea3 0%, #a3e635a3 100%)",
+          "linear-gradient(225deg, #22c55ea3 0%, #a3e635a3 100%)"
         ]
       : [
           "linear-gradient(225deg, #fca5a5a3 0%, #f43f5ea3 100%)",
           "linear-gradient(225deg, #fafafaa3 0%, #f5f5f5a3 100%)",
           "linear-gradient(225deg, #fafafaa3 0%, #f5f5f5a3 100%)",
           "linear-gradient(225deg, #fafafaa3 0%, #f5f5f5a3 100%)",
-          "linear-gradient(225deg, #86efaca3 0%, #bef264a3 100%)",
+          "linear-gradient(225deg, #86efaca3 0%, #bef264a3 100%)"
         ])(theme)
 
   const input = [-100, -30, 0, 30, 100]
@@ -106,7 +106,7 @@ export const Card: FC<CardProps> = ({
   const checkBounds = (_: unknown, { point }: PanInfo) => {
     const { LIKE, DISLIKE } = {
       LIKE: isMobile ? 300 : 600,
-      DISLIKE: isMobile ? 150 : 300,
+      DISLIKE: isMobile ? 150 : 300
     }
 
     if (point.x > LIKE) action("LIKE")
@@ -131,8 +131,7 @@ export const Card: FC<CardProps> = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, y: 50, ...leaveBy }}
-      style={{ willChange, rotate, background }}
-    >
+      style={{ willChange, rotate, background }}>
       <article className="prose prose-sm prose-neutral flex h-[-webkit-fill-available] flex-col dark:prose-invert">
         <h1 className="text-base md:text-2xl">{title}</h1>
         <div className="-mt-2 flex gap-2 text-xs text-neutral-400 md:-mt-4 md:text-sm">

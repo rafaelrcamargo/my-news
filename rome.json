@@ -1,0 +1,11 @@
+{
+  "javascript": {
+    "formatter": {
+      "quoteProperties": "asNeeded",
+      "semicolons": "asNeeded",
+      "trailingComma": "none",
+      "quoteStyle": "double"
+    }
+  },
+  "$schema": "./node_modules/rome/configuration_schema.json"
+}

@@ -11,7 +11,7 @@ import "@/styles/globals.css"
 
 const font = Open_Sans({
   variable: "--font-sans",
-  subsets: ["latin"],
+  subsets: ["latin"]
 })
 
 const Layout: FC<PropsWithChildren> = ({ children }) => (
@@ -21,8 +21,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => (
       <main
         className={
           "bg-neutral-100 text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100"
-        }
-      >
+        }>
         {children}
       </main>
     </body>
@@ -35,7 +34,7 @@ const base = {
   title: "My News - Read what matters.",
   description:
     "Keep up-to-date on what matters to you most with our must-read recommendations.",
-  url: "https://news.cmrg.me/",
+  url: "https://news.cmrg.me/"
 }
 
 export const metadata: Metadata = {
@@ -44,12 +43,12 @@ export const metadata: Metadata = {
     "height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0",
   title: {
     default: base.title,
-    template: "%s | My News",
+    template: "%s | My News"
   },
   description: base.description,
   keywords: ["News", "Read", "Articles", "Recommendations"],
   authors: [
-    { name: "Rafael R. Camargo", url: "https://github.com/rafaelrcamargo" },
+    { name: "Rafael R. Camargo", url: "https://github.com/rafaelrcamargo" }
   ],
   openGraph: {
     url: base.url,
@@ -57,7 +56,7 @@ export const metadata: Metadata = {
     locale: "en-US",
     title: base.title,
     description: base.description,
-    images: [{ url: "/og.webp" }],
+    images: [{ url: "/og.webp" }]
   },
   twitter: {
     site: base.url,
@@ -65,10 +64,10 @@ export const metadata: Metadata = {
     description: base.description,
     card: "summary_large_image",
     creator: "@rafaelrcamargo",
-    images: [{ url: "/og.webp", alt: base.title }],
+    images: [{ url: "/og.webp", alt: base.title }]
   },
   robots: {
     index: true,
-    follow: true,
-  },
+    follow: true
+  }
 }

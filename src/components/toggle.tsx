@@ -19,8 +19,7 @@ export const Toggle: FC<{ theme: Theme }> = ({ theme }) => {
         NAV_CLASSNAME,
         "right-0 top-0 md:bottom-0",
         "m-4 h-12 w-12 p-2"
-      )}
-    >
+      )}>
       <div className="center m-auto">
         <button onClick={toggle} type="button">
           {theme === "light" ? (

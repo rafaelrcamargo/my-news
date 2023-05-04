@@ -9,14 +9,14 @@ import { Toggle } from "@/components/toggle"
 import type { Theme } from "@/types/global"
 
 const Wrapper = dynamic(() => import("../components/wrapper"), {
-  loading: () => <Spinner />,
+  loading: () => <Spinner />
 })
 
 async function getNews() {
   const res = await fetch("https://newsapi.org/v2/top-headlines?country=us", {
     headers: {
-      "X-Api-Key": process.env.NEWS_API_KEY ?? "",
-    },
+      "X-Api-Key": process.env.NEWS_API_KEY ?? ""
+    }
   })
 
   if (!res.ok) throw new Error("Failed to fetch data")
