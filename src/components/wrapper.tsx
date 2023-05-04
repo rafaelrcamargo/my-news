@@ -4,10 +4,10 @@ import { useReducer, type FC } from "react"
 
 import Deck from "@/components/deck"
 import Nav from "@/components/nav"
-import NEWS from "@/data/news"
 import { Theme } from "@/types/global"
+import { News } from "@/types/news"
 
-const actions = (state: typeof NEWS.articles, action: "LIKE" | "DISLIKE") => {
+const actions = (state: News["articles"], action: "LIKE" | "DISLIKE") => {
   switch (action) {
     case "LIKE":
       console.log("Liked: ", state[0]?.title)
@@ -20,8 +20,8 @@ const actions = (state: typeof NEWS.articles, action: "LIKE" | "DISLIKE") => {
   }
 }
 
-export const Wrapper: FC<{ theme: Theme }> = ({ theme }) => {
-  const [articles, dispatch] = useReducer(actions, NEWS.articles)
+export const Wrapper: FC<{ theme: Theme; news: News }> = ({ theme, news }) => {
+  const [articles, dispatch] = useReducer(actions, news.articles)
 
   return (
     <>

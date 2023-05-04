@@ -18,7 +18,7 @@ export const Toggle: FC<{ theme: Theme }> = ({ theme }) => {
       className={cn(
         NAV_CLASSNAME,
         "right-0 top-0 md:bottom-0",
-        "h-12 w-12 p-2 m-4"
+        "m-4 h-12 w-12 p-2"
       )}
     >
       <div className="center m-auto">

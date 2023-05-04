@@ -8,7 +8,9 @@ import { Theme } from "@/types/global"
 
 import "@/styles/globals.css"
 
-const inter = Open_Sans({
+import { cn } from "@/lib/utils"
+
+const font = Open_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
 })
@@ -17,7 +19,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
   const theme = (cookies().get("theme")?.value ?? "light") as Theme
 
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={cn(font.variable)}>
       <body className={theme}>
         <main
           className={

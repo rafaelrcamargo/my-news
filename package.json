@@ -3,12 +3,12 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint --fix",
+    "dev": "next dev",
     "format": "prettier --write \"**/*.{ts,tsx,css,json,md}\" --ignore-path .gitignore",
-    "release": "changelogen --release --output ./docs/CHANGELOG.md && git push --follow-tags"
+    "lint": "next lint --fix",
+    "release": "changelogen --release --output ./docs/CHANGELOG.md && git push --follow-tags",
+    "start": "next start"
   },
   "dependencies": {
     "framer-motion": "^10.12.7",
@@ -22,7 +22,7 @@
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "18.16.3",
-    "@types/react": "18.2.2",
+    "@types/react": "18.2.5",
     "@types/react-dom": "18.2.3",
     "autoprefixer": "10.4.14",
     "changelogen": "^0.5.3",

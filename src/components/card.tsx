@@ -109,8 +109,6 @@ export const Card: FC<CardProps> = ({
       DISLIKE: isMobile ? 150 : 300,
     }
 
-    console.log(isMobile, point, LIKE, DISLIKE)
-
     if (point.x > LIKE) action("LIKE")
     if (point.x < DISLIKE) action("DISLIKE")
     if (point.y < -20) window.open(url, "_blank")
@@ -151,7 +149,7 @@ export const Card: FC<CardProps> = ({
           <motion.div className="relative block h-full w-full">
             <Image
               className="pointer-events-none m-0 rounded-md border border-neutral-200 object-cover shadow-md dark:border-neutral-900/30 dark:shadow-neutral-950/30"
-              sizes="(max-width: 768px) 50vw, 40vw" // TODO: Test this
+              sizes="50vw" // TODO: Test this
               priority={z === 10}
               src={urlToImage}
               loading="eager"

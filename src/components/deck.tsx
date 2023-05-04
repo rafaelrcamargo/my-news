@@ -4,14 +4,14 @@ import type { Dispatch, FC } from "react"
 
 import { Card } from "@/components/card"
 import { Placeholder } from "@/components/placeholder"
-import type NEWS from "@/data/news"
 import { type Theme } from "@/types/global"
+import { News } from "@/types/news"
 import { AnimatePresence } from "framer-motion"
 
 const Deck: FC<{
   theme: Theme
   dispatch: Dispatch<"LIKE" | "DISLIKE">
-  articles: typeof NEWS.articles
+  articles: News["articles"]
 }> = ({ theme, articles, dispatch }) => {
   return (
     <div className="center relative h-screen w-full overflow-hidden">
