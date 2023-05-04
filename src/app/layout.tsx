@@ -35,7 +35,7 @@ const base = {
   title: "My News - Read what matters.",
   description:
     "Keep up-to-date on what matters to you most with our must-read recommendations.",
-  url: "https://news.cmrg.dev/",
+  url: "https://news.cmrg.me/",
 }
 
 export const metadata: Metadata = {
