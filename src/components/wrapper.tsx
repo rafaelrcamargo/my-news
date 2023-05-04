@@ -4,8 +4,7 @@ import { useReducer, type FC } from "react"
 
 import Deck from "@/components/deck"
 import Nav from "@/components/nav"
-import type { Theme } from "@/types/global"
-import type { News } from "@/types/news"
+import { type News, type Theme } from "@/types/global"
 
 const actions = (state: News["articles"], action: "LIKE" | "DISLIKE") => {
   switch (action) {

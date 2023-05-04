@@ -1,10 +1,10 @@
 "use client"
 
-import type { FC } from "react"
+import { type FC } from "react"
 
 import { NAV_CLASSNAME } from "@/components/nav"
 import { cn } from "@/lib/utils"
-import type { Theme } from "@/types/global"
+import { type Theme } from "@/types/global"
 import { Moon, Sun } from "lucide-react"
 
 export const Toggle: FC<{ theme: Theme }> = ({ theme }) => {

@@ -5,8 +5,7 @@ import { useCallback, useLayoutEffect, useReducer, type FC } from "react"
 import Image from "next/image"
 
 import { cn } from "@/lib/utils"
-import type { CardProps } from "@/types/card"
-import type { Theme } from "@/types/global"
+import { type News, type Theme } from "@/types/global"
 import {
   PanInfo,
   ResolvedValues,
@@ -31,7 +30,13 @@ const ELASTIC = {
   bottom: 0.05
 }
 
-export const Card: FC<CardProps> = ({
+type Props = News["articles"][number] & {
+  actions: Function
+  theme: Theme
+  z: number
+}
+
+export const Card: FC<Props> = ({
   theme,
   title,
   description,

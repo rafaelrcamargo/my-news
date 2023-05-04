@@ -4,18 +4,15 @@ import { memo, useMemo } from "react"
 
 import { CLASSNAME } from "@/components/card"
 import { cn, toInt } from "@/lib/utils"
-import type { CardProps } from "@/types/card"
 import { motion } from "framer-motion"
 
-const change = (old: PlaceholderProps, current: PlaceholderProps) =>
+type Props = { title: string }
+const change = (old: Props, current: Props) =>
   typeof window !== "undefined"
     ? old.title.length === current.title.length
     : false
 
-type PlaceholderProps = Pick<CardProps, "title">
-export const Placeholder = memo(function Placeholder({
-  title
-}: PlaceholderProps) {
+export const Placeholder = memo(function Placeholder({ title }: Props) {
   const int = useMemo(() => {
     return toInt(title)
   }, [title])
@@ -29,5 +26,4 @@ export const Placeholder = memo(function Placeholder({
       animate={{ opacity: 1, y: 0 }}
     />
   )
-},
-change)
+}, change)

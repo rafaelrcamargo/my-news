@@ -6,7 +6,7 @@ import { cookies } from "next/headers"
 import { Spinner } from "@/components/icons"
 import { Outro } from "@/components/outro"
 import { Toggle } from "@/components/toggle"
-import type { Theme } from "@/types/global"
+import { type Theme } from "@/types/global"
 
 const Wrapper = dynamic(() => import("../components/wrapper"), {
   loading: () => <Spinner />

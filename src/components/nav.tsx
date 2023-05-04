@@ -3,7 +3,7 @@
 import { Dispatch, FC, memo } from "react"
 
 import { cn } from "@/lib/utils"
-import type { Theme } from "@/types/global"
+import { type Theme } from "@/types/global"
 import { motion } from "framer-motion"
 import { Heart, ThumbsDown, ThumbsUp } from "lucide-react"
 

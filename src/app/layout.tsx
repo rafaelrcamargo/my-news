@@ -1,6 +1,6 @@
 import { type FC, type PropsWithChildren } from "react"
 
-import type { Metadata } from "next"
+import { type Metadata } from "next"
 import { Open_Sans } from "next/font/google"
 import { cookies } from "next/headers"
 
