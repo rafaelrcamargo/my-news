@@ -5,6 +5,7 @@ import { Open_Sans } from "next/font/google"
 import { cookies } from "next/headers"
 
 import { cn } from "@/lib/utils"
+import { Analytics } from "@vercel/analytics/react"
 
 import "@/styles/globals.css"
 
@@ -15,6 +16,7 @@ const font = Open_Sans({
 
 const Layout: FC<PropsWithChildren> = ({ children }) => (
   <html lang="en" className={cn(font.variable)}>
+    <Analytics />
     <body className={cookies().get("theme")?.value ?? "light"}>
       <main
         className={
