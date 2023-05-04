@@ -12,10 +12,10 @@ const nextConfig = {
 	experimental: {
 		appDir: true,
 		typedRoutes: true,
-		// optimizeCss: true,
-		// nextScriptWorkers: true,
-		// scrollRestoration: true,
-		// webpackBuildWorker: true,
+		optimizeCss: true,
+		nextScriptWorkers: true,
+		scrollRestoration: true,
+		webpackBuildWorker: true,
 		// serverActions: true, // The *RSC* callbacks
 		// workerThreads: true, // This was crashing the build >:(
 	},

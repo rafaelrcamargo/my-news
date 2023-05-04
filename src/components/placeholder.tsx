@@ -4,7 +4,7 @@ import { memo, useMemo } from "react"
 
 import { CLASSNAME } from "@/components/card"
 import { cn, toInt } from "@/lib/utils"
-import { CardProps } from "@/types/card"
+import type { CardProps } from "@/types/card"
 import { motion } from "framer-motion"
 
 const change = (old: PlaceholderProps, current: PlaceholderProps) =>

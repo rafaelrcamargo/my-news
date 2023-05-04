@@ -6,7 +6,7 @@ import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 import type { CardProps } from "@/types/card"
-import { Theme } from "@/types/global"
+import type { Theme } from "@/types/global"
 import {
   PanInfo,
   ResolvedValues,
@@ -75,7 +75,7 @@ export const Card: FC<CardProps> = ({
           "linear-gradient(225deg, #86efaca3 0%, #bef264a3 100%)",
         ])(theme)
 
-  const input = [-100, -10, 0, 10, 100]
+  const input = [-100, -30, 0, 30, 100]
   const background = useTransform(value, input, states)
 
   useLayoutEffect(() => {
@@ -120,20 +120,20 @@ export const Card: FC<CardProps> = ({
   )
 
   return (
-    <motion.div
-      drag={true}
-      style={{ willChange, rotate, background }}
+    <motion.section
       className={className}
+      drag
+      dragSnapToOrigin
       dragElastic={ELASTIC}
-      dragSnapToOrigin={true}
       dragConstraints={CONSTRAINTS}
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0, y: 100, ...leaveBy }}
       onDragEnd={checkBounds}
       onUpdate={updateRotation}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, y: 50, ...leaveBy }}
+      style={{ willChange, rotate, background }}
     >
-      <section className="prose prose-sm prose-neutral flex h-[-webkit-fill-available] flex-col dark:prose-invert">
+      <article className="prose prose-sm prose-neutral flex h-[-webkit-fill-available] flex-col dark:prose-invert">
         <h1 className="text-base md:text-2xl">{title}</h1>
         <div className="-mt-2 flex gap-2 text-xs text-neutral-400 md:-mt-4 md:text-sm">
           {author && (
@@ -146,7 +146,7 @@ export const Card: FC<CardProps> = ({
         </div>
         <p>{description}</p>
         {urlToImage && (
-          <motion.div className="relative block h-full w-full">
+          <div className="relative block h-full w-full">
             <Image
               className="pointer-events-none m-0 rounded-md border border-neutral-200 object-cover shadow-md dark:border-neutral-900/30 dark:shadow-neutral-950/30"
               sizes="50vw" // TODO: Test this
@@ -156,9 +156,9 @@ export const Card: FC<CardProps> = ({
               alt={title}
               fill
             />
-          </motion.div>
+          </div>
         )}
-      </section>
-    </motion.div>
+      </article>
+    </motion.section>
   )
 }

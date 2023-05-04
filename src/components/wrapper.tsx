@@ -4,8 +4,8 @@ import { useReducer, type FC } from "react"
 
 import Deck from "@/components/deck"
 import Nav from "@/components/nav"
-import { Theme } from "@/types/global"
-import { News } from "@/types/news"
+import type { Theme } from "@/types/global"
+import type { News } from "@/types/news"
 
 const actions = (state: News["articles"], action: "LIKE" | "DISLIKE") => {
   switch (action) {
@@ -20,7 +20,7 @@ const actions = (state: News["articles"], action: "LIKE" | "DISLIKE") => {
   }
 }
 
-export const Wrapper: FC<{ theme: Theme; news: News }> = ({ theme, news }) => {
+const Wrapper: FC<{ theme: Theme; news: News }> = ({ theme, news }) => {
   const [articles, dispatch] = useReducer(actions, news.articles)
 
   return (
@@ -30,3 +30,5 @@ export const Wrapper: FC<{ theme: Theme; news: News }> = ({ theme, news }) => {
     </>
   )
 }
+
+export default Wrapper
