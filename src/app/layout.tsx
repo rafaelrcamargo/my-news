@@ -1,26 +1,29 @@
 import { type FC, type PropsWithChildren } from "react"
-
 import { type Metadata } from "next"
-import { Open_Sans } from "next/font/google"
+import { Open_Sans, Ubuntu } from "next/font/google"
 import { cookies } from "next/headers"
-
-import { cn } from "@/lib/utils"
 import { Analytics } from "@vercel/analytics/react"
-
+import { cn } from "@/lib/utils"
 import "@/styles/globals.css"
 
-const font = Open_Sans({
+const fontSerif = Ubuntu({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: "700"
+})
+const fontSans = Open_Sans({
   variable: "--font-sans",
-  subsets: ["latin"]
+  subsets: ["latin"],
+  weight: "400"
 })
 
 const Layout: FC<PropsWithChildren> = ({ children }) => (
-  <html lang="en" className={cn(font.variable)}>
+  <html lang="en" className={cn(fontSerif.variable, fontSans.variable)}>
     <Analytics />
     <body className={cookies().get("theme")?.value ?? "light"}>
       <main
         className={
-          "bg-neutral-100 text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100"
+          "bg-neutral-100 text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100 bg-pattern"
         }>
         {children}
       </main>

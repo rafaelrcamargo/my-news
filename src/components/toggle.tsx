@@ -3,6 +3,9 @@
 import { NAV_CLASSNAME } from "@/components/nav"
 import { cn } from "@/lib/utils"
 import { Moon, Sun } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { NAV_CLASSNAME } from "@/components/nav"
+import { type Theme } from "@/types/global"
 
 export const Toggle = async () => {
   const toggle = async () => {

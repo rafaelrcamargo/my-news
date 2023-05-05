@@ -1,3 +1,5 @@
+type Maybe<T> = T | null
+
 export type Theme = "dark" | "light"
 
 export interface News {
@@ -8,7 +10,7 @@ export interface News {
 
 interface Article {
   source: Source
-  author: string | null
+  author: Maybe<string>
   title: string
   description: string
   url: string
@@ -18,6 +20,6 @@ interface Article {
 }
 
 interface Source {
-  id: string | null
+  id: Maybe<string>
   name: string
 }

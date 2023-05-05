@@ -1,11 +1,7 @@
 "use client"
 
 import { useCallback, useLayoutEffect, useReducer, type FC } from "react"
-
 import Image from "next/image"
-
-import { cn } from "@/lib/utils"
-import { type News, type Theme } from "@/types/global"
 import {
   PanInfo,
   ResolvedValues,
@@ -14,6 +10,8 @@ import {
   useTransform,
   useWillChange
 } from "framer-motion"
+import { cn } from "@/lib/utils"
+import { type News, type Theme } from "@/types/global"
 
 const clamp = (_: unknown, num: number) =>
   Math.min(Math.max(num * 0.1, -30), 30)
