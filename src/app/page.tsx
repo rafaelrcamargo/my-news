@@ -1,4 +1,3 @@
-import { Suspense } from "react"
 import dynamic from "next/dynamic"
 import { cookies } from "next/headers"
 import { Spinner } from "@/components/icons"
@@ -23,15 +22,12 @@ async function getNews() {
 
 export default async function Home() {
   const theme = (cookies().get("theme")?.value ?? "light") as Theme
-  const news = await getNews()
 
   return (
-    <div className="bg-pattern">
-      <Wrapper theme={theme} news={news} />
-      <Suspense fallback={<Spinner />}>
-        <Toggle theme={theme} />
-      </Suspense>
+    <>
+      <Wrapper theme={theme} news={await getNews()} />
+      <Toggle theme={theme} />
       <Outro />
-    </div>
+    </>
   )
 }

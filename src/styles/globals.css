@@ -43,48 +43,6 @@
   z-index: 999;
 }
 
-.middle {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  80% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-
-  80% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-.fade-in {
-  animation: fadeIn ease 5s forwards;
-}
-
-.fade-out {
-  animation: fadeOut ease 2s forwards;
-}
-
 /* Scrollbar */
 
 ::-webkit-scrollbar {

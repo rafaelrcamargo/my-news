@@ -1,7 +1,7 @@
 import { Repeat } from "lucide-react"
 
 export const Outro = () => (
-  <div className="center middle absolute w-[68vw] max-w-sm flex-col gap-6 text-center opacity-0 fade-in">
+  <div className="center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[68vw] max-w-sm flex-col gap-6 text-center">
     <a
       href="/"
       title="Go back to the start"
