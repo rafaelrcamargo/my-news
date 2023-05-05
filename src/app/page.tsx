@@ -1,9 +1,6 @@
-import { cookies } from "next/headers"
-
 import { Outro } from "@/components/outro"
 import { Toggle } from "@/components/toggle"
-import Wrapper from "@/components/wrapper"
-import { Theme } from "@/types/global"
+import { Wrapper } from "@/components/wrapper"
 
 const getNews = async () => {
   const res = await fetch("https://newsapi.org/v2/top-headlines?country=us", {
@@ -18,20 +15,11 @@ const getNews = async () => {
 export default async function Home() {
   const news = await getNews()
 
-  const getTheme = async () => {
-    "use server"
-
-    return (cookies().get("theme")?.value ?? "light") as Theme
-  }
-
   return (
-    <div className="bg-pattern">
-      <Wrapper getTheme={getTheme} news={news} />
-
-      {/* @ts-expect-error Async Server Component */}
-      <Toggle getTheme={getTheme} />
-
+    <>
+      <Toggle />
+      <Wrapper news={news} />
       <Outro />
-    </div>
+    </>
   )
 }

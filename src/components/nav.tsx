@@ -1,18 +1,17 @@
 "use client"
 
 import { Dispatch, FC, memo } from "react"
+import { cn } from "@/utils"
 import { motion } from "framer-motion"
 import { Heart, ThumbsDown, ThumbsUp } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { type Theme } from "@/types/global"
+import { useTheme } from "next-themes"
 
 export const NAV_CLASSNAME =
   "fixed z-999 shadow-xl dark:shadow-neutral-950/30 border rounded-full flex center border-neutral-200 bg-neutral-100/10 dark:border-neutral-500/10 dark:bg-neutral-800/10"
 
-const Nav: FC<{ dispatch: Dispatch<"LIKE" | "DISLIKE">; theme: Theme }> = ({
-  dispatch,
-  theme
-}) => {
+const Nav: FC<{ dispatch: Dispatch<"LIKE" | "DISLIKE"> }> = ({ dispatch }) => {
+  const { theme } = useTheme()
+
   const MHeart = motion(Heart)
   const MThumbsUp = motion(ThumbsUp)
   const MThumbsDown = motion(ThumbsDown)

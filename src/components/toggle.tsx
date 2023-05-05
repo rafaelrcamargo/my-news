@@ -1,20 +1,14 @@
 "use client"
 
 import { NAV_CLASSNAME } from "@/components/nav"
-import { cn } from "@/lib/utils"
+import { cn } from "@/utils"
 import { Moon, Sun } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { NAV_CLASSNAME } from "@/components/nav"
-import { type Theme } from "@/types/global"
+import { useTheme } from "next-themes"
 
-export const Toggle = async () => {
-  const toggle = async () => {
-    document.cookie = `theme=${
-      (await getTheme()) === "light" ? "dark" : "light"
-    };`
+export const Toggle = () => {
+  const { theme, setTheme } = useTheme()
 
-    return window.location.reload()
-  }
+  const toggle = () => setTheme(theme === "dark" ? "light" : "dark")
 
   return (
     <section
@@ -24,7 +18,7 @@ export const Toggle = async () => {
       )}>
       <div className="center m-auto">
         <button onClick={toggle} type="button">
-          {"light" ? (
+          {theme === "light" ? (
             <Moon className="h-6 w-6 stroke-neutral-500" />
           ) : (
             <Sun className="h-6 w-6 stroke-neutral-500" />

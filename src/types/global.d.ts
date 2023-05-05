@@ -1,7 +1,5 @@
 type Maybe<T> = T | null
 
-export type Theme = "dark" | "light"
-
 export interface News {
   status: string
   totalResults: number

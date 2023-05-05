@@ -1,9 +1,9 @@
 "use client"
 
 import { memo, useMemo } from "react"
-import { motion } from "framer-motion"
-import { cn, toInt } from "@/lib/utils"
 import { CLASSNAME } from "@/components/card"
+import { cn, toInt } from "@/utils"
+import { motion } from "framer-motion"
 
 type Props = { title: string }
 const change = (old: Props, current: Props) =>

@@ -1,9 +1,9 @@
 import { type FC, type PropsWithChildren } from "react"
 import { type Metadata } from "next"
 import { Open_Sans, Ubuntu } from "next/font/google"
-import { cookies } from "next/headers"
+import { ThemeProvider } from "@/providers/theme"
+import { cn } from "@/utils"
 import { Analytics } from "@vercel/analytics/react"
-import { cn } from "@/lib/utils"
 import "@/styles/globals.css"
 
 const fontSerif = Ubuntu({
@@ -18,15 +18,21 @@ const fontSans = Open_Sans({
 })
 
 const Layout: FC<PropsWithChildren> = ({ children }) => (
-  <html lang="en" className={cn(fontSerif.variable, fontSans.variable)}>
+  <html lang="en">
     <Analytics />
-    <body className={cookies().get("theme")?.value ?? "light"}>
-      <main
-        className={
-          "bg-neutral-100 text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100 bg-pattern"
-        }>
+
+    <body
+      className={cn(
+        "bg-pattern bg-neutral-100 text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100",
+        fontSerif.variable,
+        fontSans.variable
+      )}>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="dark"
+        themes={["light", "dark"]}>
         {children}
-      </main>
+      </ThemeProvider>
     </body>
   </html>
 )

@@ -2,6 +2,8 @@
 
 import { useCallback, useLayoutEffect, useReducer, type FC } from "react"
 import Image from "next/image"
+import { type News } from "@/types/global"
+import { cn } from "@/utils"
 import {
   PanInfo,
   ResolvedValues,
@@ -10,8 +12,7 @@ import {
   useTransform,
   useWillChange
 } from "framer-motion"
-import { cn } from "@/lib/utils"
-import { type News, type Theme } from "@/types/global"
+import { useTheme } from "next-themes"
 
 const clamp = (_: unknown, num: number) =>
   Math.min(Math.max(num * 0.1, -30), 30)
@@ -30,12 +31,10 @@ const ELASTIC = {
 
 type Props = News["articles"][number] & {
   actions: Function
-  theme: Theme
   z: number
 }
 
 export const Card: FC<Props> = ({
-  theme,
   title,
   description,
   urlToImage,
@@ -45,6 +44,7 @@ export const Card: FC<Props> = ({
   actions,
   z
 }) => {
+  const { theme } = useTheme()
   const value = useMotionValue(0)
   const [rotate, setRotate] = useReducer(clamp, 0)
 
@@ -57,7 +57,7 @@ export const Card: FC<Props> = ({
   const isMobile =
     typeof window !== "undefined" ? window.innerWidth <= 768 : false
 
-  const states = ((t: Theme) =>
+  const states = (t =>
     isMobile
       ? t === "dark"
         ? ["#ef4444", "#262626", "#262626", "#262626", "#22c55e"]
@@ -76,7 +76,7 @@ export const Card: FC<Props> = ({
           "linear-gradient(225deg, #fafafaa3 0%, #f5f5f5a3 100%)",
           "linear-gradient(225deg, #fafafaa3 0%, #f5f5f5a3 100%)",
           "linear-gradient(225deg, #86efaca3 0%, #bef264a3 100%)"
-        ])(theme)
+        ])(theme ?? "dark")
 
   const input = [-100, -30, 0, 30, 100]
   const background = useTransform(value, input, states)
