@@ -1,6 +1,7 @@
 import { type FC, type PropsWithChildren } from "react"
 import { type Metadata } from "next"
 import { Open_Sans, Ubuntu } from "next/font/google"
+import { Toggle } from "@/components/toggle"
 import { ThemeProvider } from "@/providers/theme"
 import { cn } from "@/utils"
 import { Analytics } from "@vercel/analytics/react"
@@ -20,10 +21,9 @@ const fontSans = Open_Sans({
 const Layout: FC<PropsWithChildren> = ({ children }) => (
   <html lang="en">
     <Analytics />
-
     <body
       className={cn(
-        "bg-pattern bg-neutral-100 text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100",
+        "bg-pattern antialiased text-neutral-900 dark:text-neutral-100",
         fontSerif.variable,
         fontSans.variable
       )}>
@@ -31,6 +31,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => (
         attribute="class"
         defaultTheme="dark"
         themes={["light", "dark"]}>
+        <Toggle />
         {children}
       </ThemeProvider>
     </body>

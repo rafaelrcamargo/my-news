@@ -9,7 +9,13 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         serif: ["var(--font-serif)", ...fontFamily.serif]
-      }
+      },
+      animation: {
+        "fade-in": "fadeIn 1s ease-in forwards 2s"
+      },
+      keyframes: _ => ({
+        fadeIn: { "0%": { opacity: 0 }, "100%": { opacity: 1 } }
+      })
     }
   },
   experimental: ["optimizeUniversalDefaults"],

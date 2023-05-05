@@ -39,12 +39,12 @@ const Nav: FC<{ dispatch: Dispatch<"LIKE" | "DISLIKE"> }> = ({ dispatch }) => {
             initial={{ scale: 0, backgroundColor: "#ef4444" }}
             animate={{
               scale: 1,
-              backgroundColor: theme === "dark" ? "#171717" : "#f2f2f2"
+              backgroundColor: theme === "dark" ? "#17171780" : "#f2f2f280"
             }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
             onClick={() => dispatch("LIKE")}
-            className="overflow-hidden rounded-full border border-neutral-200 bg-neutral-100/30 shadow-xl dark:border-neutral-500/10 dark:bg-neutral-900 dark:shadow-neutral-950/30">
+            className="overflow-hidden rounded-full border border-neutral-200 bg-neutral-100 shadow-xl dark:border-neutral-500/10 dark:bg-neutral-900 dark:shadow-neutral-950/30">
             <MHeart
               initial={{ scale: 0, fill: "#ef4444" }}
               animate={{ scale: 1, fill: "#ef444400" }}

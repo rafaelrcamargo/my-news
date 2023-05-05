@@ -1,5 +1,4 @@
 import { Outro } from "@/components/outro"
-import { Toggle } from "@/components/toggle"
 import { Wrapper } from "@/components/wrapper"
 
 const getNews = async () => {
@@ -17,7 +16,6 @@ export default async function Home() {
 
   return (
     <>
-      <Toggle />
       <Wrapper news={news} />
       <Outro />
     </>
