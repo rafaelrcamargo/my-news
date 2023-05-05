@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 import { Heart, ThumbsDown, ThumbsUp } from "lucide-react"
 
 export const NAV_CLASSNAME =
-  "fixed z-999 h-16 shadow-xl dark:shadow-neutral-950/30 border rounded-full flex center border-neutral-200 bg-neutral-100/10 px-4 dark:border-neutral-500/10 dark:bg-neutral-800/10 backdrop-blur-sm backdrop-saturate-150"
+  "fixed z-999 shadow-xl dark:shadow-neutral-950/30 border rounded-full flex center border-neutral-200 bg-neutral-100/10 dark:border-neutral-500/10 dark:bg-neutral-800/10"
 
 const Nav: FC<{ dispatch: Dispatch<"LIKE" | "DISLIKE">; theme: Theme }> = ({
   dispatch,
@@ -22,7 +22,7 @@ const Nav: FC<{ dispatch: Dispatch<"LIKE" | "DISLIKE">; theme: Theme }> = ({
     <nav
       className={cn(
         NAV_CLASSNAME,
-        "bottom-0 left-1/2 mb-4 -translate-x-1/2 px-6"
+        "bottom-0 left-1/2 mb-4 h-16 -translate-x-1/2 px-6 backdrop-blur-sm backdrop-saturate-150"
       )}>
       <div className="relative m-auto flex w-full max-w-2xl items-center justify-between gap-2">
         <div className="h-min w-min p-2">

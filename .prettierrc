@@ -8,9 +8,7 @@
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
-    "",
     "<THIRD_PARTY_MODULES>",
-    "",
     "^types$",
     "^types/(.*)$",
     "^config/(.*)$",
@@ -22,11 +20,7 @@
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
   "importOrderBuiltinModulesToTop": true,
-  "importOrderParserPlugins": [
-    "jsx",
-    "typescript",
-    "decorators-legacy"
-  ],
+  "importOrderParserPlugins": ["jsx", "typescript", "decorators-legacy"],
   "importOrderMergeDuplicateImports": true,
   "importOrderCombineTypeAndValueImports": true,
   "plugins": [

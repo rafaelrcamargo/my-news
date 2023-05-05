@@ -1,10 +1,10 @@
 "use client"
 
-import { useReducer, type FC } from "react"
+import { useReducer } from "react"
 
 import Deck from "@/components/deck"
 import Nav from "@/components/nav"
-import { type News, type Theme } from "@/types/global"
+import { type News } from "@/types/global"
 
 const actions = (state: News["articles"], action: "LIKE" | "DISLIKE") => {
   switch (action) {
@@ -19,8 +19,10 @@ const actions = (state: News["articles"], action: "LIKE" | "DISLIKE") => {
   }
 }
 
-const Wrapper: FC<{ theme: Theme; news: News }> = ({ theme, news }) => {
+type Props = { getTheme: () => Promise<string>; news: News }
+const Wrapper = async ({ getTheme, news }: Props) => {
   const [articles, dispatch] = useReducer(actions, news.articles)
+  const theme = await getTheme()
 
   return (
     <>

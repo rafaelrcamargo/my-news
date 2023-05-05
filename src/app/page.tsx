@@ -1,38 +1,36 @@
-import { Suspense } from "react"
-
-import dynamic from "next/dynamic"
 import { cookies } from "next/headers"
 
-import { Spinner } from "@/components/icons"
 import { Outro } from "@/components/outro"
 import { Toggle } from "@/components/toggle"
-import { type Theme } from "@/types/global"
+import Wrapper from "@/components/wrapper"
+import { Theme } from "@/types/global"
 
-const Wrapper = dynamic(() => import("../components/wrapper"), {
-  loading: () => <Spinner />
-})
-
-async function getNews() {
+const getNews = async () => {
   const res = await fetch("https://newsapi.org/v2/top-headlines?country=us", {
-    headers: {
-      "X-Api-Key": process.env.NEWS_API_KEY ?? ""
-    }
+    headers: { "X-Api-Key": process.env.NEWS_API_KEY ?? "" },
+    next: { revalidate: 60 * 60 }
   })
 
-  if (!res.ok) throw new Error("Failed to fetch data")
-  return res.json()
+  if (!res.ok) throw Error("Failed to fetch NEWS from NEWS API")
+  else return res.json()
 }
 
 export default async function Home() {
-  const theme = (cookies().get("theme")?.value ?? "light") as Theme
   const news = await getNews()
+
+  const getTheme = async () => {
+    "use server"
+
+    return (cookies().get("theme")?.value ?? "light") as Theme
+  }
 
   return (
     <div className="bg-pattern">
-      <Wrapper theme={theme} news={news} />
-      <Suspense fallback={<Spinner />}>
-        <Toggle theme={theme} />
-      </Suspense>
+      <Wrapper getTheme={getTheme} news={news} />
+
+      {/* @ts-expect-error Async Server Component */}
+      <Toggle getTheme={getTheme} />
+
       <Outro />
     </div>
   )

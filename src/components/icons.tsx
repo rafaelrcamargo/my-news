@@ -1,5 +1,5 @@
 export const Spinner = () => (
-  <div className="center middle z-999 absolute fade-out" role="status">
+  <div className="center middle z-999 absolute" role="status">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
