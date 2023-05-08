@@ -5,18 +5,14 @@
     "next/core-web-vitals",
     "plugin:tailwindcss/recommended"
   ],
-  "plugins": [
-    "tailwindcss"
-  ],
+  "plugins": ["tailwindcss"],
   "rules": {
     "react/display-name": "off",
     "tailwindcss/no-custom-classname": "off"
   },
   "settings": {
     "tailwindcss": {
-      "callees": [
-        "cn"
-      ]
+      "callees": ["cn"]
     }
   }
 }
