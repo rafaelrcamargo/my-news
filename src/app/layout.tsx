@@ -19,14 +19,12 @@ const fontSans = Open_Sans({
 })
 
 const Layout: FC<PropsWithChildren> = ({ children }) => (
-  <html lang="en">
+  <html lang="en" className={cn(fontSerif.variable, fontSans.variable)}>
     <Analytics />
     <body
-      className={cn(
-        "bg-pattern antialiased text-neutral-900 dark:text-neutral-100",
-        fontSerif.variable,
-        fontSans.variable
-      )}>
+      className={
+        "bg-pattern antialiased text-neutral-900 dark:text-neutral-100"
+      }>
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"
