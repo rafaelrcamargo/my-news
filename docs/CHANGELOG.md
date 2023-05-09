@@ -4,54 +4,52 @@
 
 [compare changes](https://github.com/rafaelrcamargo/my-news/compare/v0.1.4...v0.1.5)
 
-
 ### 🚀 Enhancements
 
-  - General updates ([7499987](https://github.com/rafaelrcamargo/my-news/commit/7499987))
-  - General updates ([1036e31](https://github.com/rafaelrcamargo/my-news/commit/1036e31))
-  - General updates ([29cdf86](https://github.com/rafaelrcamargo/my-news/commit/29cdf86))
-  - Formatting ([57041b3](https://github.com/rafaelrcamargo/my-news/commit/57041b3))
-  - Formatting ([962ab09](https://github.com/rafaelrcamargo/my-news/commit/962ab09))
-  - Formatting ([2ab0d49](https://github.com/rafaelrcamargo/my-news/commit/2ab0d49))
-  - General updates ([20f9d64](https://github.com/rafaelrcamargo/my-news/commit/20f9d64))
-  - Formatting + less css bloat ([f6f2243](https://github.com/rafaelrcamargo/my-news/commit/f6f2243))
-  - Theming upgrade + formatting ([8dc6af0](https://github.com/rafaelrcamargo/my-news/commit/8dc6af0))
-  - Formatting + less css bloat ([043dc17](https://github.com/rafaelrcamargo/my-news/commit/043dc17))
-  - Ui updates ([f75e988](https://github.com/rafaelrcamargo/my-news/commit/f75e988))
-  - Ui updates ([466a6f9](https://github.com/rafaelrcamargo/my-news/commit/466a6f9))
-  - MAJOR updates :D ([ Better UI, Better animations + Less bloat code and better structure](https://github.com/rafaelrcamargo/my-news/commit/ Better UI, Better animations + Less bloat code and better structure))
+- General updates ([7499987](https://github.com/rafaelrcamargo/my-news/commit/7499987))
+- General updates ([1036e31](https://github.com/rafaelrcamargo/my-news/commit/1036e31))
+- General updates ([29cdf86](https://github.com/rafaelrcamargo/my-news/commit/29cdf86))
+- Formatting ([57041b3](https://github.com/rafaelrcamargo/my-news/commit/57041b3))
+- Formatting ([962ab09](https://github.com/rafaelrcamargo/my-news/commit/962ab09))
+- Formatting ([2ab0d49](https://github.com/rafaelrcamargo/my-news/commit/2ab0d49))
+- General updates ([20f9d64](https://github.com/rafaelrcamargo/my-news/commit/20f9d64))
+- Formatting + less css bloat ([f6f2243](https://github.com/rafaelrcamargo/my-news/commit/f6f2243))
+- Theming upgrade + formatting ([8dc6af0](https://github.com/rafaelrcamargo/my-news/commit/8dc6af0))
+- Formatting + less css bloat ([043dc17](https://github.com/rafaelrcamargo/my-news/commit/043dc17))
+- Ui updates ([f75e988](https://github.com/rafaelrcamargo/my-news/commit/f75e988))
+- Ui updates ([466a6f9](https://github.com/rafaelrcamargo/my-news/commit/466a6f9))
+- MAJOR updates :D ([ Better UI, Better animations + Less bloat code and better structure](https://github.com/rafaelrcamargo/my-news/commit/ Better UI, Better animations + Less bloat code and better structure))
 
 ### 🏡 Chore
 
-  - **release:** V0.1.2 ([58bc6e4](https://github.com/rafaelrcamargo/my-news/commit/58bc6e4))
+- **release:** V0.1.2 ([58bc6e4](https://github.com/rafaelrcamargo/my-news/commit/58bc6e4))
 
-### ❤️  Contributors
+### ❤️ Contributors
 
-- Rafaelrcamargo 
+- Rafaelrcamargo
 - A367854 ([@rafaelrcamargo](http://github.com/rafaelrcamargo))
 
 ## v0.1.2
 
 [compare changes](https://github.com/rafaelrcamargo/my-news/compare/v0.1.4...v0.1.2)
 
-
 ### 🚀 Enhancements
 
-  - General updates ([7499987](https://github.com/rafaelrcamargo/my-news/commit/7499987))
-  - General updates ([1036e31](https://github.com/rafaelrcamargo/my-news/commit/1036e31))
-  - General updates ([29cdf86](https://github.com/rafaelrcamargo/my-news/commit/29cdf86))
-  - Formatting ([57041b3](https://github.com/rafaelrcamargo/my-news/commit/57041b3))
-  - Formatting ([962ab09](https://github.com/rafaelrcamargo/my-news/commit/962ab09))
-  - Formatting ([2ab0d49](https://github.com/rafaelrcamargo/my-news/commit/2ab0d49))
-  - General updates ([20f9d64](https://github.com/rafaelrcamargo/my-news/commit/20f9d64))
-  - Formatting + less css bloat ([f6f2243](https://github.com/rafaelrcamargo/my-news/commit/f6f2243))
-  - Theming upgrade + formatting ([8dc6af0](https://github.com/rafaelrcamargo/my-news/commit/8dc6af0))
-  - Formatting + less css bloat ([043dc17](https://github.com/rafaelrcamargo/my-news/commit/043dc17))
-  - Ui updates ([f75e988](https://github.com/rafaelrcamargo/my-news/commit/f75e988))
-  - Ui updates ([466a6f9](https://github.com/rafaelrcamargo/my-news/commit/466a6f9))
-  - MAJOR updates :D ([ Better UI, Better animations + Less bloat code and better structure](https://github.com/rafaelrcamargo/my-news/commit/ Better UI, Better animations + Less bloat code and better structure))
+- General updates ([7499987](https://github.com/rafaelrcamargo/my-news/commit/7499987))
+- General updates ([1036e31](https://github.com/rafaelrcamargo/my-news/commit/1036e31))
+- General updates ([29cdf86](https://github.com/rafaelrcamargo/my-news/commit/29cdf86))
+- Formatting ([57041b3](https://github.com/rafaelrcamargo/my-news/commit/57041b3))
+- Formatting ([962ab09](https://github.com/rafaelrcamargo/my-news/commit/962ab09))
+- Formatting ([2ab0d49](https://github.com/rafaelrcamargo/my-news/commit/2ab0d49))
+- General updates ([20f9d64](https://github.com/rafaelrcamargo/my-news/commit/20f9d64))
+- Formatting + less css bloat ([f6f2243](https://github.com/rafaelrcamargo/my-news/commit/f6f2243))
+- Theming upgrade + formatting ([8dc6af0](https://github.com/rafaelrcamargo/my-news/commit/8dc6af0))
+- Formatting + less css bloat ([043dc17](https://github.com/rafaelrcamargo/my-news/commit/043dc17))
+- Ui updates ([f75e988](https://github.com/rafaelrcamargo/my-news/commit/f75e988))
+- Ui updates ([466a6f9](https://github.com/rafaelrcamargo/my-news/commit/466a6f9))
+- MAJOR updates :D ([ Better UI, Better animations + Less bloat code and better structure](https://github.com/rafaelrcamargo/my-news/commit/ Better UI, Better animations + Less bloat code and better structure))
 
-### ❤️  Contributors
+### ❤️ Contributors
 
 - A367854 ([@rafaelrcamargo](http://github.com/rafaelrcamargo))
 - Rafaelrcamargo
