@@ -1,9 +1,8 @@
 # 📰 My News
 
 Get _your daily dose_ of news with a personalized touch!
-See it live at [news.cmrg.me](https://news.cmrg.me)! ✨
 
-> **Note**: This project is still in development. The current version is a prototype.
+> **Note**: This project is still in development. But you can se it live at [news.cmrg.me](https://news.cmrg.me)! ✨
 
 ## Features
 
