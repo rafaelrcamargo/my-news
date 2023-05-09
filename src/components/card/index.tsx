@@ -95,13 +95,13 @@ export const Card: FC<Props> = ({ url, actions, z, ...props }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, y: 50, ...leaveBy, pointerEvents: "none" }}
-      className={cn(CLASSNAME, `z- shadow-xl dark:shadow-neutral-950/50${z}`)}>
-      <Article {...props} z={z} />
+      className={cn(CLASSNAME, `z-${z} shadow-xl dark:shadow-neutral-950/50`)}>
+      <Article {...props} />
     </motion.section>
   )
 }
 
-const Article = ({ ...props }: Omit<Props, "url" | "actions">) => (
+const Article = ({ ...props }: Omit<Props, "url" | "actions" | "z">) => (
   <article className="prose prose-sm prose-neutral flex h-[-webkit-fill-available] flex-col dark:prose-invert">
     <h1 className="text-base md:text-2xl">{props.title}</h1>
     <div className="-mt-2 flex gap-2 text-xs text-neutral-400 md:-mt-4 md:text-sm">
@@ -119,10 +119,9 @@ const Article = ({ ...props }: Omit<Props, "url" | "actions">) => (
         <Image
           className="pointer-events-none m-0 rounded-md border border-neutral-200 object-cover shadow-md dark:border-neutral-900/30 dark:shadow-neutral-950/30"
           sizes="50vw" // TODO: Test this
-          priority={props.z === 10}
           src={props.urlToImage}
-          loading="eager"
           alt={props.title}
+          loading="eager"
           fill
         />
       </div>
