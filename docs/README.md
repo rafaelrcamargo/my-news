@@ -4,6 +4,8 @@ Get _your daily dose_ of news with a personalized touch!
 
 > **Note:** This project is still in development. The current version is a prototype.
 
+![Home](/docs/assets/dark.gif)
+
 ## Features
 
 - [x] **News feed** - Get news from your favorite sources and topics.
@@ -11,6 +13,4 @@ Get _your daily dose_ of news with a personalized touch!
 
 ## Galery
 
-![Home](/docs/images/home.png)
-![OG](/docs/images/og.webp)
-![Lighthouse](/docs/images/lighthouse.png)
+![OG](/docs/assets/og.webp)
