@@ -1,12 +1,12 @@
 import { Repeat } from "lucide-react"
 
 export const Outro = () => (
-  <div className="center absolute left-1/2 top-1/2 w-[68vw] animate-fade-in opacity-0 max-w-sm -translate-x-1/2 -translate-y-1/2 flex-col gap-6 text-center">
+  <div className="center absolute left-1/2 top-1/2 w-[68vw] max-w-sm -translate-x-1/2 -translate-y-1/2 animate-fade-in flex-col gap-6 text-center opacity-0">
     <a
       href="/"
       title="Go back to the start"
       aria-label="Go back to the start"
-      className="center rounded-full border border-neutral-500/30 p-4">
+      className="center rounded-full border border-neutral-500/30 p-4 duration-150 hover:scale-105 hover:bg-neutral-300/50 focus:ring-1 focus:ring-violet-500/80 focus:ring-offset-2 focus:ring-offset-neutral-100 dark:hover:bg-neutral-900/50 dark:focus:ring-offset-neutral-900">
       <Repeat className="stroke-neutral-500" />
     </a>
 

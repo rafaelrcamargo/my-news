@@ -1,33 +1,39 @@
 "use client"
 
-import { FC, type Dispatch } from "react"
 import { Card } from "@/components/card"
-import { Placeholder } from "@/components/placeholder"
-import { type News } from "@/types/global"
+import { Placeholder } from "@/components/card/placeholder"
+import { useNews } from "@/providers/news"
 import { AnimatePresence } from "framer-motion"
 
-const Deck: FC<{
-  articles: News["articles"]
-  dispatch: Dispatch<"LIKE" | "DISLIKE">
-}> = ({ articles, dispatch }) => {
+export const Deck = () => {
+  const { articles, dispatch } = useNews()
+
   return (
     <div className="center relative h-screen w-full overflow-hidden">
-      <AnimatePresence>
-        {articles.map((article, i) =>
-          i < 2 ? (
+      <AnimatePresence initial={false} mode="popLayout">
+        {articles
+          .filter((_, i) => i < 2)
+          .map((article, i) => (
             <Card
-              key={article.title}
+              key={`Card ${article.title}`}
               actions={dispatch}
               {...article}
               z={10 - i}
             />
-          ) : (
-            <Placeholder key={article.title} {...article} />
-          )
+          ))}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {articles.map(
+          (article, i) =>
+            i > 2 && (
+              <Placeholder
+                key={`Placeholder ${article.title}`}
+                title={article.title}
+              />
+            )
         )}
       </AnimatePresence>
     </div>
   )
 }
-
-export default Deck

@@ -1,7 +1,7 @@
 "use client"
 
 import { memo, useMemo } from "react"
-import { CLASSNAME } from "@/components/card"
+import { CLASSNAME } from "@/components/card/utils"
 import { cn, toInt } from "@/utils"
 import { motion } from "framer-motion"
 
@@ -23,6 +23,7 @@ export const Placeholder = memo(function Placeholder({ title }: Props) {
       transition={{ delay: int * 0.15 }}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 0, scale: 0.9 }}
     />
   )
 }, change)

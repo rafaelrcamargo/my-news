@@ -23,7 +23,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => (
     <Analytics />
     <body
       className={
-        "bg-pattern antialiased text-neutral-900 dark:text-neutral-100"
+        "bg-pattern text-neutral-900 antialiased selection:bg-violet-500/30 dark:text-neutral-100"
       }>
       <ThemeProvider
         attribute="class"
