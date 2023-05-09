@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true"
+})
+
+module.exports = withBundleAnalyzer({
   images: {
     remotePatterns: [
       {
@@ -17,6 +21,4 @@ const nextConfig = {
     scrollRestoration: true,
     webpackBuildWorker: true
   }
-}
-
-module.exports = nextConfig
+})

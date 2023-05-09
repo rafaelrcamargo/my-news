@@ -96,12 +96,12 @@ export const Card: FC<Props> = ({ url, actions, z, ...props }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, y: 50, ...leaveBy, pointerEvents: "none" }}
       className={cn(CLASSNAME, `z-${z} shadow-xl dark:shadow-neutral-950/50`)}>
-      <Article {...props} />
+      <Article {...props} z={z} />
     </motion.section>
   )
 }
 
-const Article = ({ ...props }: Omit<Props, "url" | "actions" | "z">) => (
+const Article = ({ z, ...props }: Omit<Props, "url" | "actions">) => (
   <article className="prose prose-sm prose-neutral flex h-[-webkit-fill-available] flex-col dark:prose-invert">
     <h1 className="text-base md:text-2xl">{props.title}</h1>
     <div className="-mt-2 flex gap-2 text-xs text-neutral-400 md:-mt-4 md:text-sm">
@@ -111,7 +111,9 @@ const Article = ({ ...props }: Omit<Props, "url" | "actions" | "z">) => (
           <span>·</span>
         </>
       )}
-      <span className="text-violet-500">{props.source.name}</span>
+      <span className="text-violet-700 dark:text-violet-300">
+        {props.source.name}
+      </span>
     </div>
     <p>{props.description}</p>
     {props.urlToImage && (
@@ -121,7 +123,9 @@ const Article = ({ ...props }: Omit<Props, "url" | "actions" | "z">) => (
           sizes="50vw" // TODO: Test this
           src={props.urlToImage}
           alt={props.title}
-          loading="eager"
+          fetchPriority={z === 10 ? "high" : "low"}
+          loading={z === 10 ? "eager" : "lazy"}
+          priority={z === 10}
           fill
         />
       </div>
