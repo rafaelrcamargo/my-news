@@ -8,10 +8,11 @@ import React, {
   type FC,
   type PropsWithChildren
 } from "react"
-import { News } from "@/types/global"
+
+import { type Article } from "@/types"
 
 export type Action = "LIKE" | "DISLIKE"
-const actions = (state: News["articles"], action: Action) => {
+const actions = (state: Article[], action: Action) => {
   switch (action) {
     case "LIKE":
       console.log("Liked: ", state[0]?.title)
@@ -24,15 +25,15 @@ const actions = (state: News["articles"], action: Action) => {
   }
 }
 
-type Context = { articles: News["articles"]; dispatch: Dispatch<Action> }
+type Context = { articles: Article[]; dispatch: Dispatch<Action> }
 export const NewsContext = createContext<Context>({
   articles: [],
   dispatch: () => null
 })
 
-type Props = FC<PropsWithChildren<{ news: News }>>
+type Props = FC<PropsWithChildren<{ news: Article[] }>>
 export const NewsProvider: Props = ({ children, news }) => {
-  const [articles, dispatch] = useReducer(actions, news.articles ?? [])
+  const [articles, dispatch] = useReducer(actions, news ?? [])
 
   return (
     <NewsContext.Provider value={{ articles, dispatch }}>

@@ -1,11 +1,12 @@
 "use client"
 
 import { Dispatch, FC, useMemo } from "react"
-import { Action, useNews } from "@/providers/news"
-import { cn } from "@/utils"
 import { motion } from "framer-motion"
 import { Heart as HeartIcon, ThumbsDown, ThumbsUp } from "lucide-react"
 import { useTheme } from "next-themes"
+
+import { Action, useNews } from "@/providers/news"
+import { cn } from "@/utils"
 
 export const NAV_CLASSNAME =
   "fixed z-999 shadow-xl dark:shadow-neutral-950/30 border rounded-full flex center border-neutral-200 bg-neutral-100/10 dark:border-neutral-500/10 dark:bg-neutral-800/10"
