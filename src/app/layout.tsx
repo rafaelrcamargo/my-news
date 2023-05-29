@@ -1,11 +1,15 @@
-import { type FC, type PropsWithChildren } from "react"
 import { type Metadata } from "next"
 import { Open_Sans, Ubuntu } from "next/font/google"
+import { type FC, type PropsWithChildren } from "react"
+import { Analytics } from "@vercel/analytics/react"
+
 import { Toggle } from "@/components/toggle"
 import { ThemeProvider } from "@/providers/theme"
 import { cn } from "@/utils"
-import { Analytics } from "@vercel/analytics/react"
+
 import "@/styles/globals.css"
+
+import { Outro } from "@/components/outro"
 
 const fontSerif = Ubuntu({
   variable: "--font-serif",
@@ -31,6 +35,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => (
         themes={["light", "dark"]}>
         <Toggle />
         {children}
+        <Outro />
       </ThemeProvider>
     </body>
   </html>

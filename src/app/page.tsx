@@ -1,9 +1,10 @@
+import { cookies } from "next/headers"
 import { notFound } from "next/navigation"
+
 import { Deck } from "@/components/deck"
 import { Nav } from "@/components/nav"
-import { Outro } from "@/components/outro"
 import { NewsProvider } from "@/providers/news"
-import { News } from "@/types/global"
+import { type NewsAPIResponse } from "@/types"
 
 const getNews = async () => {
   const res = await fetch("https://newsapi.org/v2/top-headlines?country=us", {
@@ -12,22 +13,30 @@ const getNews = async () => {
   })
 
   if (!res.ok) throw Error("Failed to fetch NEWS from NEWS API")
-  else return res.json() as Promise<News>
+  else return res.json() as Promise<NewsAPIResponse>
 }
 
 export default async function Home() {
-  const news = await getNews()
+  const cookie = cookies().get("isFirstVisit")
+  const isFirstVisit = cookie === undefined || cookie.value === "true"
 
-  if (news.status !== "ok") return notFound()
+  const news_raw = await getNews()
+  if (news_raw.status !== "ok") return notFound()
+
+  const news = news_raw.articles.map(article => ({
+    source: article.source.name,
+    author: article.author,
+    title: article.title,
+    url: article.url,
+    image: article.urlToImage,
+    publishedAt: article.publishedAt,
+    content: article.content
+  }))
 
   return (
-    <>
-      <NewsProvider news={news}>
-        <Deck />
-        <Nav />
-      </NewsProvider>
-
-      <Outro />
-    </>
+    <NewsProvider news={news}>
+      <Deck firstVisit={isFirstVisit} />
+      <Nav />
+    </NewsProvider>
   )
 }

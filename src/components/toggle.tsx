@@ -1,9 +1,10 @@
 "use client"
 
-import { NAV_CLASSNAME } from "@/components/nav"
-import { cn } from "@/utils"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
+
+import { NAV_CLASSNAME } from "@/components/nav"
+import { cn } from "@/utils"
 
 export const Toggle = () => {
   const { theme, setTheme } = useTheme()

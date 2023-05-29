@@ -1,42 +1,52 @@
 "use client"
 
-import { useCallback, useLayoutEffect, useReducer, type FC } from "react"
 import Image from "next/image"
 import {
-  CLASSNAME,
-  CONSTRAINTS,
-  ELASTIC,
-  clamp,
-  getStates,
-  isMobile
-} from "@/components/card/utils"
-import { type News } from "@/types/global"
-import { cn } from "@/utils"
+  ReactElement,
+  useCallback,
+  useLayoutEffect,
+  useReducer,
+  type FC
+} from "react"
 import {
+  motion,
   PanInfo,
   ResolvedValues,
-  motion,
   useMotionValue,
   useTransform,
   useWillChange
 } from "framer-motion"
 import { useTheme } from "next-themes"
+import removeMd from "remove-markdown"
 
-type Props = News["articles"][number] & {
+import {
+  clamp,
+  CLASSNAME,
+  CONSTRAINTS,
+  ELASTIC,
+  getStates,
+  isMobile
+} from "@/components/card/utils"
+import { type Article } from "@/types"
+import { cn } from "@/utils"
+
+type Props = Partial<Article> & {
+  children?: ReactElement
   actions: Function
   z: number
 }
 
-export const Card: FC<Props> = ({ url, actions, z, ...props }) => {
+export const Card: FC<Props> = ({ children, actions, url, z, ...props }) => {
   const { theme } = useTheme()
   const value = useMotionValue(0)
   const willChange = useWillChange()
 
   const [rotate, setRotate] = useReducer(clamp, 0)
 
+  const distance = window ? window.innerWidth : 600
   const [leaveBy, setLeaveBy] = useReducer(
     (_: unknown, exit: "left" | "right") =>
-      exit === "left" ? { x: -600 } : { x: 600 },
+      exit === "left" ? { x: -distance } : { x: distance },
     { x: 0 }
   )
 
@@ -69,7 +79,7 @@ export const Card: FC<Props> = ({ url, actions, z, ...props }) => {
 
     if (point.x > LIKE) action("LIKE")
     if (point.x < DISLIKE) action("DISLIKE")
-    if (point.y < -20) window.open(url, "_blank")
+    if (point.y < 50) window.open(url, "_blank")
   }
 
   const updateRotation = useCallback(
@@ -96,36 +106,39 @@ export const Card: FC<Props> = ({ url, actions, z, ...props }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, y: 50, ...leaveBy, pointerEvents: "none" }}
       className={cn(CLASSNAME, `z-${z} shadow-xl dark:shadow-neutral-950/50`)}>
-      <Article {...props} z={z} />
+      {children ? children : <Article {...props} />}
     </motion.section>
   )
 }
 
-const Article = ({ z, ...props }: Omit<Props, "url" | "actions">) => (
+const Article = ({
+  title,
+  author,
+  source,
+  image,
+  content
+}: Omit<Props, "url" | "actions" | "z">) => (
   <article className="prose prose-sm prose-neutral flex h-[-webkit-fill-available] flex-col dark:prose-invert">
-    <h1 className="text-base md:text-2xl">{props.title}</h1>
+    <h1 className="text-base md:text-2xl">{title}</h1>
     <div className="-mt-2 flex gap-2 text-xs text-neutral-400 md:-mt-4 md:text-sm">
-      {props.author && (
+      {author && (
         <>
-          <span>{props.author}</span>
+          <span>{author}</span>
           <span>·</span>
         </>
       )}
-      <span className="text-violet-700 dark:text-violet-300">
-        {props.source.name}
-      </span>
+      <span className="text-violet-700 dark:text-violet-300">{source}</span>
     </div>
-    <p>{props.description}</p>
-    {props.urlToImage && (
+
+    {content && <p>{removeMd(content.slice(0, 160)) + "..."}</p>}
+
+    {image && (
       <div className="relative block h-full w-full">
         <Image
           className="pointer-events-none m-0 rounded-md border border-neutral-200 object-cover shadow-md dark:border-neutral-900/30 dark:shadow-neutral-950/30"
-          sizes="50vw" // TODO: Test this
-          src={props.urlToImage}
-          alt={props.title}
-          fetchPriority={z === 10 ? "high" : "low"}
-          loading={z === 10 ? "eager" : "lazy"}
-          priority={z === 10}
+          alt={title + " image"}
+          sizes="50vw"
+          src={image}
           fill
         />
       </div>
