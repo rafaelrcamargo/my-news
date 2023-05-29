@@ -4,28 +4,27 @@
 
 [compare changes](https://github.com/rafaelrcamargo/my-news/compare/v0.1.5...v0.1.6)
 
-
 ### 🚀 Enhancements
 
-  - Docs update + linting ([9cc5358](https://github.com/rafaelrcamargo/my-news/commit/9cc5358))
-  - Docs ([110a2e7](https://github.com/rafaelrcamargo/my-news/commit/110a2e7))
-  - Docs ([4527205](https://github.com/rafaelrcamargo/my-news/commit/4527205))
-  - Bundle updates ([d36534c](https://github.com/rafaelrcamargo/my-news/commit/d36534c))
-  - 🎉  new articles source (thanks to @TabNews) ([4afaec6](https://github.com/rafaelrcamargo/my-news/commit/4afaec6))
+- Docs update + linting ([9cc5358](https://github.com/rafaelrcamargo/my-news/commit/9cc5358))
+- Docs ([110a2e7](https://github.com/rafaelrcamargo/my-news/commit/110a2e7))
+- Docs ([4527205](https://github.com/rafaelrcamargo/my-news/commit/4527205))
+- Bundle updates ([d36534c](https://github.com/rafaelrcamargo/my-news/commit/d36534c))
+- 🎉 new articles source (thanks to @TabNews) ([4afaec6](https://github.com/rafaelrcamargo/my-news/commit/4afaec6))
 
 ### 🩹 Fixes
 
-  - Z-index for main cards ([2f82c21](https://github.com/rafaelrcamargo/my-news/commit/2f82c21))
+- Z-index for main cards ([2f82c21](https://github.com/rafaelrcamargo/my-news/commit/2f82c21))
 
 ### 📖 Documentation
 
-  - Notes ([5c99a35](https://github.com/rafaelrcamargo/my-news/commit/5c99a35))
+- Notes ([5c99a35](https://github.com/rafaelrcamargo/my-news/commit/5c99a35))
 
 ### 🏡 Chore
 
-  - Better README.md 🎨  ([d8623b9](https://github.com/rafaelrcamargo/my-news/commit/d8623b9))
+- Better README.md 🎨 ([d8623b9](https://github.com/rafaelrcamargo/my-news/commit/d8623b9))
 
-### ❤️  Contributors
+### ❤️ Contributors
 
 - Rafael R. Camargo <rafaelrakochinski@gmail.com>
 - Rafaelrcamargo
