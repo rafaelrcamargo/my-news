@@ -16,6 +16,7 @@ const fontSerif = Ubuntu({
   subsets: ["latin"],
   weight: "700"
 })
+
 const fontSans = Open_Sans({
   variable: "--font-sans",
   subsets: ["latin"],

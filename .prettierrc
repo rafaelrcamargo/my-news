@@ -1,7 +1,11 @@
 {
+  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
   "arrowParens": "avoid",
   "bracketSameLine": true,
+  "trailingComma": "none",
   "bracketSpacing": true,
+  "singleQuote": false,
+  "semi": false,
   "importOrder": [
     "^(next/(.*)$)|^(next$)",
     "^(react/(.*)$)|^(react$)",
@@ -13,13 +17,5 @@
     "^@/(.*)$",
     "",
     "^[./]"
-  ],
-  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
-  "plugins": [
-    "prettier-plugin-tailwindcss",
-    "@ianvs/prettier-plugin-sort-imports"
-  ],
-  "semi": false,
-  "singleQuote": false,
-  "trailingComma": "none"
+  ]
 }
