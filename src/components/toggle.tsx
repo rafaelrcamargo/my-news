@@ -19,10 +19,10 @@ export const Toggle = () => {
       )}>
       <div className="center m-auto">
         <button onClick={toggle} type="button" aria-label="Toggle theme">
-          {theme === "light" ? (
-            <Moon className="h-6 w-6 stroke-neutral-500" />
-          ) : (
+          {theme === "dark" ? (
             <Sun className="h-6 w-6 stroke-neutral-500" />
+          ) : (
+            <Moon className="h-6 w-6 stroke-neutral-500" />
           )}
         </button>
       </div>

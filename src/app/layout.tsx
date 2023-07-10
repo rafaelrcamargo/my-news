@@ -26,6 +26,7 @@ const fontSans = Open_Sans({
 const Layout: FC<PropsWithChildren> = ({ children }) => (
   <html lang="en" className={cn(fontSerif.variable, fontSans.variable)}>
     <Analytics />
+
     <body
       className={
         "bg-pattern text-neutral-900 antialiased selection:bg-violet-500/30 dark:text-neutral-100"
