@@ -3,13 +3,12 @@ import { Open_Sans, Ubuntu } from "next/font/google"
 import { type FC, type PropsWithChildren } from "react"
 import { Analytics } from "@vercel/analytics/react"
 
+import { Outro } from "@/components/outro"
 import { Toggle } from "@/components/toggle"
 import { ThemeProvider } from "@/providers/theme"
 import { cn } from "@/utils"
 
 import "@/styles/globals.css"
-
-import { Outro } from "@/components/outro"
 
 const fontSerif = Ubuntu({
   variable: "--font-serif",

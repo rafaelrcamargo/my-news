@@ -1,5 +1,8 @@
 {
-  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
+  "plugins": [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
   "arrowParens": "avoid",
   "bracketSameLine": true,
   "trailingComma": "none",
@@ -12,10 +15,9 @@
     "^(@vercel/(.*)$)|^(@vercel$)",
     "<THIRD_PARTY_MODULES>",
     "",
-    "^types$",
-    "",
     "^@/(.*)$",
     "",
+    "import \"",
     "^[./]"
   ]
 }
