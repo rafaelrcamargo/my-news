@@ -9,7 +9,7 @@ import { Action, useNews } from "@/providers/news"
 import { cn } from "@/utils"
 
 export const NAV_CLASSNAME =
-  "fixed z-999 shadow-xl dark:shadow-neutral-950/30 border rounded-full flex center border-neutral-200 bg-neutral-100/10 dark:border-neutral-500/10 dark:bg-neutral-800/10"
+  "fixed z-999 shadow-lg dark:shadow-neutral-950/30 border rounded-full flex center border-neutral-200 bg-neutral-100/10 dark:border-neutral-500/10 dark:bg-neutral-800/10"
 
 export const Nav = () => {
   const { theme } = useTheme()
