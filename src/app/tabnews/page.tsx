@@ -1,5 +1,4 @@
 import { cookies } from "next/headers"
-import { notFound } from "next/navigation"
 import { type Metadata } from "next/types"
 
 import { getArticles } from "@/app/tabnews/queries"
@@ -8,11 +7,15 @@ import { Nav } from "@/components/nav"
 import { NewsProvider } from "@/providers/news"
 
 export default async function Home() {
+  // First visit cookie
   const cookie = cookies().get("isFirstVisit")
-  const isFirstVisit = cookie === undefined || cookie.value === "true"
+  let isFirstVisit = !cookie || cookie.value === "true"
 
+  // News from TabNews API
   const news = await getArticles()
-  if (news.status >= 400) return notFound()
+
+  // Avoid showing the first visit message if the API is down
+  if (news.status !== 200) isFirstVisit = false
 
   return (
     <NewsProvider news={news.articles}>

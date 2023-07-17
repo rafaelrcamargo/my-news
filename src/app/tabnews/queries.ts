@@ -5,11 +5,27 @@ import stopWords from "@/utils/stop-words"
 
 const BASE_URL = "https://www.tabnews.com.br/api/v1/contents"
 
-// ? TabNews API for (relevant) article list
+// ? TabNews query for (relevant) article list
 export const getArticles = async () => {
   const { data, status } = await fetcher<TabNewsAPI["article"][]>(
     `${BASE_URL}?strategy=relevant`
   )
+
+  if (status === 429)
+    return {
+      status,
+      articles: [
+        {
+          url: "https://youtu.be/dQw4w9WgXcQ",
+          image: "https://http.cat/images/429.jpg",
+          title: "Limite de requisições excedido.",
+          content: "Tente novamente mais tarde",
+          source: "TabNews",
+          author: "HTTP Server",
+          publishedAt: new Date()
+        }
+      ]
+    }
 
   const articles = await Promise.all(
     data.map(async article => {
@@ -39,7 +55,7 @@ export const getArticles = async () => {
   return { status, articles }
 }
 
-// ? TabNews API for article content
+// ? TabNews query for article content
 const getDetails = async (owner_username: string, slug: string) =>
   (
     await fetcher<TabNewsAPI["article"]>(
@@ -47,7 +63,7 @@ const getDetails = async (owner_username: string, slug: string) =>
     )
   ).data
 
-// ? Pexels API for image representation
+// ? Pexels query for image representation
 const getImage = async (topic: string) =>
   (
     await fetcher<PexelsAPIResponse>(

@@ -5,6 +5,7 @@
 @layer base {
   * {
     @apply font-sans;
+    text-rendering: geometricprecision;
   }
 
   body {

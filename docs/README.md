@@ -7,6 +7,7 @@ Get _your daily dose_ of news with a personalized touch!
 ## Features
 
 - [x] **News feed** - Get news from your favorite sources and topics.
+  - [x] **TabNews** - A new source of news.
 - [ ] **Personalized news** - Get news based on your interests.
 
 ## Galery
@@ -16,4 +17,4 @@ Get _your daily dose_ of news with a personalized touch!
 
 ## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for details.

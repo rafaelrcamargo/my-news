@@ -130,7 +130,7 @@ const Article = ({
       </span>
     </div>
 
-    {content && <p>{removeMd(content.slice(0, 160)) + "..."}</p>}
+    {content && <p>{removeMd(content).slice(0, 160) + "..."}</p>}
 
     {image && (
       <div className="relative block h-full w-full">
