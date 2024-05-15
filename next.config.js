@@ -1,6 +1,6 @@
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true"
-})
+  enabled: process.env.ANALYZE === "true",
+});
 
 /** @type {import('next').NextConfig} */
 module.exports = withBundleAnalyzer({
@@ -8,16 +8,15 @@ module.exports = withBundleAnalyzer({
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "*"
-      }
-    ]
+        hostname: "*",
+      },
+    ],
   },
   experimental: {
     optimizeCss: true,
     typedRoutes: true,
-    serverActions: true,
     nextScriptWorkers: true,
     scrollRestoration: true,
-    webpackBuildWorker: true
-  }
-})
+    webpackBuildWorker: true,
+  },
+});

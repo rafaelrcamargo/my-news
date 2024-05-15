@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { FC, useState } from "react"
-import { AnimatePresence } from "framer-motion"
-import { RoughNotation } from "react-rough-notation"
+import { FC, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { RoughNotation } from "react-rough-notation";
 
-import { Card } from "@/components/card"
-import { Placeholder } from "@/components/card/placeholder"
-import { useNews } from "@/providers/news"
+import { Card } from "@/components/card";
+import { Placeholder } from "@/components/card/placeholder";
+import { useNews } from "@/providers/news";
 
 export const Deck: FC<{ firstVisit: boolean }> = ({ firstVisit }) => {
-  const [isFirstVisit, setIsFirstVisit] = useState(firstVisit)
-  const { articles, dispatch } = useNews()
+  const [isFirstVisit, setIsFirstVisit] = useState(firstVisit);
+  const { articles, dispatch } = useNews();
 
   const understood = (_: string) => {
-    if (!document) throw Error("document is not defined")
-    else document.cookie = "isFirstVisit=false;max-age=31536000"
+    if (!document) throw Error("document is not defined");
+    else document.cookie = "isFirstVisit=false;max-age=31536000";
 
-    return setIsFirstVisit(false)
-  }
+    return setIsFirstVisit(false);
+  };
 
   return (
     <div className="center relative h-screen w-full overflow-hidden">
@@ -42,7 +42,8 @@ export const Deck: FC<{ firstVisit: boolean }> = ({ firstVisit }) => {
                   type="underline"
                   color="#8b5cf6"
                   animationDelay={1000}
-                  show>
+                  show
+                >
                   a unique news experience tailored just for you.
                 </RoughNotation>{" "}
                 Say goodbye to generic headlines and embrace a world where{" "}
@@ -54,7 +55,8 @@ export const Deck: FC<{ firstVisit: boolean }> = ({ firstVisit }) => {
                   type="underline"
                   color="#8b5cf6"
                   animationDelay={2000}
-                  show>
+                  show
+                >
                   With a simple swipe,
                 </RoughNotation>{" "}
                 curate your news feed to match your passions. Sound familiar?
@@ -69,7 +71,8 @@ export const Deck: FC<{ firstVisit: boolean }> = ({ firstVisit }) => {
                   type="underline"
                   color="#8b5cf6"
                   animationDelay={3000}
-                  show>
+                  show
+                >
                   Stay informed, explore new horizons, and ignite your
                   curiosity.
                 </RoughNotation>{" "}
@@ -84,7 +87,8 @@ export const Deck: FC<{ firstVisit: boolean }> = ({ firstVisit }) => {
                   padding={14}
                   iterations={5}
                   animationDuration={2000}
-                  show>
+                  show
+                >
                   Enjoy the ride!
                 </RoughNotation>
               </p>
@@ -92,7 +96,7 @@ export const Deck: FC<{ firstVisit: boolean }> = ({ firstVisit }) => {
           </Card>
         )}
         {articles
-          .filter((_, i) => i < 2)
+          .filter((_, i) => i < 3)
           .map((article, i) => (
             <Card
               key={`Card ${article.title}`}
@@ -106,14 +110,14 @@ export const Deck: FC<{ firstVisit: boolean }> = ({ firstVisit }) => {
       <AnimatePresence>
         {articles.map(
           (article, i) =>
-            i > 2 && (
+            i > 3 && (
               <Placeholder
                 key={`Placeholder ${article.title}`}
                 title={article.title}
               />
-            )
+            ),
         )}
       </AnimatePresence>
     </div>
-  )
-}
+  );
+};

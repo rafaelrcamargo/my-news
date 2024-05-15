@@ -1,23 +1,4 @@
 {
-  "plugins": [
-    "@ianvs/prettier-plugin-sort-imports",
-    "prettier-plugin-tailwindcss"
-  ],
-  "arrowParens": "avoid",
-  "bracketSameLine": true,
-  "trailingComma": "none",
-  "bracketSpacing": true,
-  "singleQuote": false,
-  "semi": false,
-  "importOrder": [
-    "^(next/(.*)$)|^(next$)",
-    "^(react/(.*)$)|^(react$)",
-    "^(@vercel/(.*)$)|^(@vercel$)",
-    "<THIRD_PARTY_MODULES>",
-    "",
-    "^@/(.*)$",
-    "",
-    "import \"",
-    "^[./]"
-  ]
+  "tabWidth": 2,
+  "useTabs": false
 }
